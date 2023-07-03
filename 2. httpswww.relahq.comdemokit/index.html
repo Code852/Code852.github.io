@@ -1,0 +1,2651 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Real Estate</title>
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="./assets/css1.css"
+      media="all"
+    />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="./assets/css2.css"
+      media="all"
+    />
+
+    <script src="./assets/js4.js"></script>
+    <script src="./assets/js2.js"></script>
+    <script src="./assets/js5.js"></script>
+    <script src="./assets/js3.js"></script>
+    <script>
+      jQuery.extend(Drupal.settings, {
+        basePath: "\/",
+        pathPrefix: "",
+
+        prevent_js_alerts: {
+          module_path: "sites\/all\/modules\/contrib\/prevent_js_alerts",
+        },
+        photoswipe: {
+          options: {
+            showAnimationDuration: 333,
+            hideAnimationDuration: 333,
+            showHideOpacity: false,
+            bgOpacity: 0.98999999999999999,
+            spacing: 0.12,
+            allowPanToNext: true,
+            maxSpreadZoom: 2,
+            loop: false,
+            pinchToClose: true,
+            closeOnScroll: false,
+            closeOnVerticalDrag: false,
+            mouseUsed: false,
+            escKey: true,
+            arrowKeys: true,
+            history: true,
+            errorMsg:
+              "\u003Cdiv class=\u0022pswp__error-msg\u0022\u003E\u003Ca href=\u0022%url%\u0022 target=\u0022_blank\u0022\u003EThe image\u003C\/a\u003E could not be loaded.\u003C\/div\u003E",
+            preload: [1, 1],
+            mainClass: null,
+            focus: true,
+            tapToClose: false,
+          },
+        },
+        googleanalytics: {
+          trackOutbound: 1,
+          trackMailto: 1,
+          trackDownload: 1,
+          trackDownloadExtensions:
+            "7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip",
+          trackDomainMode: "2",
+          trackCrossDomains: ["www.relahq.com", "www.relahq.com"],
+        },
+        relaAnalytics: {
+          propertyPageView: {
+            category: "Property",
+            action: "View",
+            label: 83661131,
+            value: 0,
+          },
+        },
+        relaAnalyticsPlausible: { propertyPageView: { nid: 83661131 } },
+        better_exposed_filters: {
+          views: {
+            property_examples: { displays: { embed_list: { filters: [] } } },
+            videos: {
+              displays: {
+                branded_gallery: { filters: [] },
+                pane_plyr_gallery_items: { filters: [] },
+                plyr_gallery_player: { filters: [] },
+              },
+            },
+            flyers: { displays: { download_flyers: { filters: [] } } },
+            property_galleries: {
+              displays: { gallery_sections: { filters: [] } },
+            },
+            owl_galleries: { displays: { owl_embed_vtour: { filters: [] } } },
+            open_house_date: { displays: { block: { filters: [] } } },
+            virtual_open_house: {
+              displays: { panel_property: { filters: [] } },
+            },
+            video_manager: {
+              displays: { manage_video_gallery: { filters: [] } },
+            },
+            agent_cards_property_old: {
+              displays: { embed_card_3: { filters: [] } },
+            },
+            property_docs: {
+              displays: { property_docs_embed: { filters: [] } },
+            },
+            books: { displays: { property_download_pdf: { filters: [] } } },
+          },
+        },
+        relaPIDhash: "l9hpmEiuGYqgNiQ6_WQqACMLNrFiJrsEvrBKF2KVRvY",
+        improved_multi_select: {
+          selectors: [".improved-multiselect"],
+          isblacklist: 0,
+          filtertype: "partial",
+          orderable: 0,
+          groupresetfilter: 0,
+          buttontext_add: "\u003E",
+          buttontext_addall: "\u00bb",
+          buttontext_del: "\u003C",
+          buttontext_delall: "\u00ab",
+          buttontext_moveup: "Move up",
+          buttontext_movedown: "Move down",
+        },
+        CToolsModal: {
+          loadingText: "Loading...",
+          closeText: "Close Window",
+          closeImage:
+            "\u003Cimg src=\u0022https:\/\/www.relahq.com\/sites\/all\/modules\/contrib\/ctools\/images\/icon-close-window.png\u0022 alt=\u0022Close window\u0022 title=\u0022Close window\u0022 \/\u003E",
+          throbber:
+            "\u003Cimg src=\u0022https:\/\/www.relahq.com\/sites\/all\/modules\/contrib\/ctools\/images\/throbber.gif\u0022 alt=\u0022Loading\u0022 title=\u0022Loading...\u0022 \/\u003E",
+        },
+        RelaPropertyFloorplan: {
+          floorplanListPS: [
+            {
+              url: "https:\/\/s3.amazonaws.com\/fse1.relahq.com\/public\/styles\/kb_full\/s3\/property-docs\/prop-nid-83661131\/floor-1.png",
+              w: 1600,
+              h: 1131,
+              pid: "83661756",
+              property: "83661131",
+            },
+            {
+              url: "https:\/\/s3.amazonaws.com\/fse1.relahq.com\/public\/styles\/kb_full\/s3\/property-docs\/prop-nid-83661131\/floor-2.png",
+              w: 1600,
+              h: 1131,
+              pid: "83661761",
+              property: "83661131",
+            },
+          ],
+          DLRestricted: false,
+        },
+        views: {
+          ajax_path: "\/views\/ajax",
+          ajaxViews: {
+            "views_dom_id:3e337ff094c6a548e1a6f4489a3c1369": {
+              view_name: "videos",
+              view_display_id: "branded_gallery",
+              view_args: "83661131\/both+branded+unbranded",
+              view_path: "node\/83661131",
+              view_base_path: null,
+              view_dom_id: "3e337ff094c6a548e1a6f4489a3c1369",
+              pager_element: 0,
+            },
+            "views_dom_id:60a5fee7bc9dbc3bb93a4aa1b384e7fe": {
+              view_name: "videos",
+              view_display_id: "pane_plyr_gallery_items",
+              view_args: "83661131\/branded",
+              view_path: "node\/83661131",
+              view_base_path: null,
+              view_dom_id: "60a5fee7bc9dbc3bb93a4aa1b384e7fe",
+              pager_element: 0,
+            },
+            "views_dom_id:67863a9c259077cdf8bfcfdd5cf39b0f": {
+              view_name: "videos",
+              view_display_id: "plyr_gallery_player",
+              view_args: "83661536\/branded",
+              view_path: "node\/83661131",
+              view_base_path: null,
+              view_dom_id: "67863a9c259077cdf8bfcfdd5cf39b0f",
+              pager_element: 0,
+            },
+            "views_dom_id:7a06efb434dc0774860b126242eb0f09": {
+              view_name: "books",
+              view_display_id: "property_download_pdf",
+              view_args: "83661131",
+              view_path: "node\/83661131",
+              view_base_path: null,
+              view_dom_id: "7a06efb434dc0774860b126242eb0f09",
+              pager_element: 0,
+            },
+          },
+        },
+        urlIsAjaxTrusted: { "\/views\/ajax": true, "\/": true },
+        RelaProperty: {
+          nid: "83661131",
+          imageListPS: [
+            {
+              url: "https:\/\/s3.amazonaws.com\/fse1.relahq.com\/public\/styles\/kb_full\/s3\/property-images\/prop-nid-83661131\/adobestock_198467490.jpg",
+              w: 1600,
+              h: 1066,
+              title: "",
+              pid: "83661716",
+              property: "83661131",
+            },
+            {
+              url: "https:\/\/s3.amazonaws.com\/fse1.relahq.com\/public\/styles\/kb_full\/s3\/property-images\/prop-nid-83661131\/pexels-saviesa-home-2089698.jpg",
+              w: 1600,
+              h: 1066,
+              title: "",
+              pid: "83661591",
+              property: "83661131",
+            },
+            {
+              url: "https:\/\/s3.amazonaws.com\/fse1.relahq.com\/public\/styles\/kb_full\/s3\/property-images\/prop-nid-83661131\/adobestock_297044418.jpeg",
+              w: 1600,
+              h: 941,
+              title: "",
+              pid: "83661706",
+              property: "83661131",
+            },
+            {
+              url: "https:\/\/s3.amazonaws.com\/fse1.relahq.com\/public\/styles\/kb_full\/s3\/property-images\/prop-nid-83661131\/light_int_adobestock_451880774.jpeg",
+              w: 1600,
+              h: 1066,
+              title: "",
+              pid: "83661481",
+              property: "83661131",
+            },
+            {
+              url: "https:\/\/s3.amazonaws.com\/fse1.relahq.com\/public\/styles\/kb_full\/s3\/property-images\/prop-nid-83661131\/light_int_adobestock_451995100.jpeg",
+              w: 1600,
+              h: 1066,
+              title: "",
+              pid: "83661486",
+              property: "83661131",
+            },
+            {
+              url: "https:\/\/s3.amazonaws.com\/fse1.relahq.com\/public\/styles\/kb_full\/s3\/property-images\/prop-nid-83661131\/light_int_adobestock_451995110.jpeg",
+              w: 1600,
+              h: 1066,
+              title: "",
+              pid: "83661491",
+              property: "83661131",
+            },
+            {
+              url: "https:\/\/s3.amazonaws.com\/fse1.relahq.com\/public\/styles\/kb_full\/s3\/property-images\/prop-nid-83661131\/light_int_adobestock_451995112.jpeg",
+              w: 1600,
+              h: 1066,
+              title: "",
+              pid: "83661496",
+              property: "83661131",
+            },
+            {
+              url: "https:\/\/s3.amazonaws.com\/fse1.relahq.com\/public\/styles\/kb_full\/s3\/property-images\/prop-nid-83661131\/light_int_adobestock_451880778.jpeg",
+              w: 1600,
+              h: 1066,
+              title: "",
+              pid: "83661501",
+              property: "83661131",
+            },
+            {
+              url: "https:\/\/s3.amazonaws.com\/fse1.relahq.com\/public\/styles\/kb_full\/s3\/property-images\/prop-nid-83661131\/light_int_adobestock_451880777.jpeg",
+              w: 1600,
+              h: 1066,
+              title: "",
+              pid: "83661506",
+              property: "83661131",
+            },
+            {
+              url: "https:\/\/s3.amazonaws.com\/fse1.relahq.com\/public\/styles\/kb_full\/s3\/property-images\/prop-nid-83661131\/light_int_adobestock_451880787.jpeg",
+              w: 1600,
+              h: 1066,
+              title: "",
+              pid: "83661511",
+              property: "83661131",
+            },
+            {
+              url: "https:\/\/s3.amazonaws.com\/fse1.relahq.com\/public\/styles\/kb_full\/s3\/property-images\/prop-nid-83661131\/light_int_adobestock_451880796.jpeg",
+              w: 1600,
+              h: 1066,
+              title: "",
+              pid: "83661516",
+              property: "83661131",
+            },
+            {
+              url: "https:\/\/s3.amazonaws.com\/fse1.relahq.com\/public\/styles\/kb_full\/s3\/property-images\/prop-nid-83661131\/light_int_adobestock_451880784.jpeg",
+              w: 1600,
+              h: 1066,
+              title: "",
+              pid: "83661521",
+              property: "83661131",
+            },
+            {
+              url: "https:\/\/s3.amazonaws.com\/fse1.relahq.com\/public\/styles\/kb_full\/s3\/property-images\/prop-nid-83661131\/light_int_adobestock_452122166.jpeg",
+              w: 1600,
+              h: 1066,
+              title: "",
+              pid: "83661526",
+              property: "83661131",
+            },
+            {
+              url: "https:\/\/s3.amazonaws.com\/fse1.relahq.com\/public\/styles\/kb_full\/s3\/property-images\/prop-nid-83661131\/adobestock_288147436.jpeg",
+              w: 1600,
+              h: 1066,
+              title: "",
+              pid: "83661531",
+              property: "83661131",
+            },
+            {
+              url: "https:\/\/s3.amazonaws.com\/fse1.relahq.com\/public\/styles\/kb_full\/s3\/property-images\/prop-nid-83661131\/pexels-max-vakhtbovych-6207947.jpg",
+              w: 1600,
+              h: 1065,
+              title: "",
+              pid: "83661541",
+              property: "83661131",
+            },
+            {
+              url: "https:\/\/s3.amazonaws.com\/fse1.relahq.com\/public\/styles\/kb_full\/s3\/property-images\/prop-nid-83661131\/pexels-max-vakhtbovych-7031406.jpg",
+              w: 1600,
+              h: 1068,
+              title: "",
+              pid: "83661546",
+              property: "83661131",
+            },
+            {
+              url: "https:\/\/s3.amazonaws.com\/fse1.relahq.com\/public\/styles\/kb_full\/s3\/property-images\/prop-nid-83661131\/pexels-max-vakhtbovych-7031407.jpg",
+              w: 1600,
+              h: 1067,
+              title: "",
+              pid: "83661551",
+              property: "83661131",
+            },
+            {
+              url: "https:\/\/s3.amazonaws.com\/fse1.relahq.com\/public\/styles\/kb_full\/s3\/property-images\/prop-nid-83661131\/pexels-maria-orlova-4906249.jpg",
+              w: 1600,
+              h: 2400,
+              title: "",
+              pid: "83661556",
+              property: "83661131",
+            },
+            {
+              url: "https:\/\/s3.amazonaws.com\/fse1.relahq.com\/public\/styles\/kb_full\/s3\/property-images\/prop-nid-83661131\/pexels-tamil-king-3214064.jpg",
+              w: 1600,
+              h: 1066,
+              title: "",
+              pid: "83661566",
+              property: "83661131",
+            },
+            {
+              url: "https:\/\/s3.amazonaws.com\/fse1.relahq.com\/public\/styles\/kb_full\/s3\/property-images\/prop-nid-83661131\/pexels-sharath-g-2251247.jpg",
+              w: 1600,
+              h: 1066,
+              title: "",
+              pid: "83661571",
+              property: "83661131",
+            },
+            {
+              url: "https:\/\/s3.amazonaws.com\/fse1.relahq.com\/public\/styles\/kb_full\/s3\/property-images\/prop-nid-83661131\/pexels-pixabay-259962.jpg",
+              w: 1600,
+              h: 1062,
+              title: "",
+              pid: "83661576",
+              property: "83661131",
+            },
+            {
+              url: "https:\/\/s3.amazonaws.com\/fse1.relahq.com\/public\/styles\/kb_full\/s3\/property-images\/prop-nid-83661131\/pexels-skitterphoto-584399.jpg",
+              w: 1600,
+              h: 1058,
+              title: "",
+              pid: "83661586",
+              property: "83661131",
+            },
+            {
+              url: "https:\/\/s3.amazonaws.com\/fse1.relahq.com\/public\/styles\/kb_full\/s3\/property-images\/prop-nid-83661131\/pexels-terry-magallanes-2635038.jpg",
+              w: 1600,
+              h: 1068,
+              title: "",
+              pid: "83661596",
+              property: "83661131",
+            },
+            {
+              url: "https:\/\/s3.amazonaws.com\/fse1.relahq.com\/public\/styles\/kb_full\/s3\/property-images\/prop-nid-83661131\/pexels-patryk-kamenczak-775219.jpg",
+              w: 1600,
+              h: 900,
+              title: "",
+              pid: "83661601",
+              property: "83661131",
+            },
+            {
+              url: "https:\/\/s3.amazonaws.com\/fse1.relahq.com\/public\/styles\/kb_full\/s3\/property-images\/prop-nid-83661131\/pexels-burst-545012.jpg",
+              w: 1600,
+              h: 1066,
+              title: "",
+              pid: "83661606",
+              property: "83661131",
+            },
+            {
+              url: "https:\/\/s3.amazonaws.com\/fse1.relahq.com\/public\/styles\/kb_full\/s3\/property-images\/prop-nid-83661131\/pexels-expect-best-323781.jpg",
+              w: 1600,
+              h: 1062,
+              title: "",
+              pid: "83661611",
+              property: "83661131",
+            },
+            {
+              url: "https:\/\/s3.amazonaws.com\/fse1.relahq.com\/public\/styles\/kb_full\/s3\/property-images\/prop-nid-83661131\/pexels-pixabay-279719.jpg",
+              w: 1600,
+              h: 1000,
+              title: "",
+              pid: "83661616",
+              property: "83661131",
+            },
+            {
+              url: "https:\/\/s3.amazonaws.com\/fse1.relahq.com\/public\/styles\/kb_full\/s3\/property-images\/prop-nid-83661131\/adobestock_375232166.jpeg",
+              w: 1600,
+              h: 744,
+              title: "",
+              pid: "83661621",
+              property: "83661131",
+            },
+            {
+              url: "https:\/\/s3.amazonaws.com\/fse1.relahq.com\/public\/styles\/kb_full\/s3\/property-images\/prop-nid-83661131\/two-round-pendant-lamps-in-cafeteria-827528.jpg",
+              w: 1600,
+              h: 2399,
+              title: "",
+              pid: "83661626",
+              property: "83661131",
+            },
+            {
+              url: "https:\/\/s3.amazonaws.com\/fse1.relahq.com\/public\/styles\/kb_full\/s3\/property-images\/prop-nid-83661131\/apartment-architecture-carpet-chair-276583.jpg",
+              w: 1600,
+              h: 1042,
+              title: "",
+              pid: "83661631",
+              property: "83661131",
+            },
+            {
+              url: "https:\/\/s3.amazonaws.com\/fse1.relahq.com\/public\/styles\/kb_full\/s3\/property-images\/prop-nid-83661131\/apartment-contemporary-couch-curtains-275484.jpg",
+              w: 1600,
+              h: 1066,
+              title: "",
+              pid: "83661636",
+              property: "83661131",
+            },
+            {
+              url: "https:\/\/s3.amazonaws.com\/fse1.relahq.com\/public\/styles\/kb_full\/s3\/property-images\/prop-nid-83661131\/apartment-bed-bedroom-book-shelves-439227.jpg",
+              w: 1600,
+              h: 900,
+              title: "",
+              pid: "83661641",
+              property: "83661131",
+            },
+            {
+              url: "https:\/\/s3.amazonaws.com\/fse1.relahq.com\/public\/styles\/kb_full\/s3\/property-images\/prop-nid-83661131\/bathroom-interior-1457847.jpg",
+              w: 1600,
+              h: 2160,
+              title: "",
+              pid: "83661646",
+              property: "83661131",
+            },
+            {
+              url: "https:\/\/s3.amazonaws.com\/fse1.relahq.com\/public\/styles\/kb_full\/s3\/property-images\/prop-nid-83661131\/gray-wooden-ladder-on-white-painted-wall-1125136.jpg",
+              w: 1600,
+              h: 2396,
+              title: "",
+              pid: "83661651",
+              property: "83661131",
+            },
+            {
+              url: "https:\/\/s3.amazonaws.com\/fse1.relahq.com\/public\/styles\/kb_full\/s3\/property-images\/prop-nid-83661131\/apartment-bed-bedroom-comfort-545034.jpg",
+              w: 1600,
+              h: 1066,
+              title: "",
+              pid: "83661661",
+              property: "83661131",
+            },
+            {
+              url: "https:\/\/s3.amazonaws.com\/fse1.relahq.com\/public\/styles\/kb_full\/s3\/property-images\/prop-nid-83661131\/brown-wooden-vase-near-the-window-1129413.jpg",
+              w: 1600,
+              h: 2399,
+              title: "",
+              pid: "83661666",
+              property: "83661131",
+            },
+            {
+              url: "https:\/\/s3.amazonaws.com\/fse1.relahq.com\/public\/styles\/kb_full\/s3\/property-images\/prop-nid-83661131\/adobestock_343381345.jpeg",
+              w: 1600,
+              h: 780,
+              title: "",
+              pid: "83661681",
+              property: "83661131",
+            },
+            {
+              url: "https:\/\/s3.amazonaws.com\/fse1.relahq.com\/public\/styles\/kb_full\/s3\/property-images\/prop-nid-83661131\/ralph-kayden-2d4laqalbda-unsplash.jpg",
+              w: 1600,
+              h: 1066,
+              title: "",
+              pid: "83661686",
+              property: "83661131",
+            },
+            {
+              url: "https:\/\/s3.amazonaws.com\/fse1.relahq.com\/public\/styles\/kb_full\/s3\/property-images\/prop-nid-83661131\/apartment-architectural-design-architecture-building-323772.jpg",
+              w: 1600,
+              h: 1066,
+              title: "",
+              pid: "83661691",
+              property: "83661131",
+            },
+            {
+              url: "https:\/\/s3.amazonaws.com\/fse1.relahq.com\/public\/styles\/kb_full\/s3\/property-images\/prop-nid-83661131\/adobestock_309881545.jpeg",
+              w: 1600,
+              h: 1066,
+              title: "",
+              pid: "83661696",
+              property: "83661131",
+            },
+            {
+              url: "https:\/\/s3.amazonaws.com\/fse1.relahq.com\/public\/styles\/kb_full\/s3\/property-images\/prop-nid-83661131\/adobestock_362895562.jpeg",
+              w: 1600,
+              h: 1066,
+              title: "",
+              pid: "83661701",
+              property: "83661131",
+            },
+            {
+              url: "https:\/\/s3.amazonaws.com\/fse1.relahq.com\/public\/styles\/kb_full\/s3\/property-images\/prop-nid-83661131\/adobestock_272168413.jpeg",
+              w: 1600,
+              h: 1066,
+              title: "",
+              pid: "83661711",
+              property: "83661131",
+            },
+            {
+              url: "https:\/\/s3.amazonaws.com\/fse1.relahq.com\/public\/styles\/kb_full\/s3\/property-images\/prop-nid-83661131\/adobestock_163838423.jpg",
+              w: 1600,
+              h: 1066,
+              title: "",
+              pid: "83661721",
+              property: "83661131",
+            },
+            {
+              url: "https:\/\/s3.amazonaws.com\/fse1.relahq.com\/public\/styles\/kb_full\/s3\/property-images\/prop-nid-83661131\/adobestock_178798998.jpg",
+              w: 1600,
+              h: 1066,
+              title: "",
+              pid: "83661726",
+              property: "83661131",
+            },
+            {
+              url: "https:\/\/s3.amazonaws.com\/fse1.relahq.com\/public\/styles\/kb_full\/s3\/property-images\/prop-nid-83661131\/adobestock_178800354.jpg",
+              w: 1600,
+              h: 1066,
+              title: "",
+              pid: "83661731",
+              property: "83661131",
+            },
+            {
+              url: "https:\/\/s3.amazonaws.com\/fse1.relahq.com\/public\/styles\/kb_full\/s3\/property-images\/prop-nid-83661131\/adobestock_144014897.jpg",
+              w: 1600,
+              h: 841,
+              title: "",
+              pid: "83661736",
+              property: "83661131",
+            },
+            {
+              url: "https:\/\/s3.amazonaws.com\/fse1.relahq.com\/public\/styles\/kb_full\/s3\/property-images\/prop-nid-83661131\/adobestock_77685456.jpeg",
+              w: 1600,
+              h: 1066,
+              title: "",
+              pid: "83661741",
+              property: "83661131",
+            },
+            {
+              url: "https:\/\/s3.amazonaws.com\/fse1.relahq.com\/public\/styles\/kb_full\/s3\/property-images\/prop-nid-83661131\/adobestock_357294987.jpeg",
+              w: 1600,
+              h: 1066,
+              title: "",
+              pid: "83661746",
+              property: "83661131",
+            },
+          ],
+          DLRestricted: false,
+        },
+        owlVtour: { count: 1 },
+        plyrVideo: { count: 1 },
+        relaVideoPlayer: {
+          videoSource: "youtube",
+          videoID: "61P7x2gc6Uc",
+          sound: "",
+        },
+        propertyTemplateSettings: { accent_color: "2e6278" },
+        field_group: { div: "card_3" },
+        styled_google_map: { "64a2293a89f95": "64a2293a89f95" },
+        id64a2293a89f95: {
+          locations: [
+            {
+              geom: "POINT (-119.4179324 36.778261)",
+              geo_type: "point",
+              lat: "36.778261000000",
+              lon: "-119.417932400000",
+              left: "-119.417932400000",
+              top: "36.778261000000",
+              right: "-119.417932400000",
+              bottom: "36.778261000000",
+              geohash: "9qe14x68bkz8r",
+              maptype: "ROADMAP",
+              style:
+                " [\r\n  {\r\n    \u0022elementType\u0022: \u0022geometry\u0022,\r\n    \u0022stylers\u0022: [\r\n      {\r\n        \u0022color\u0022: \u0022#f5f5f5\u0022\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \u0022elementType\u0022: \u0022labels.icon\u0022,\r\n    \u0022stylers\u0022: [\r\n      {\r\n        \u0022visibility\u0022: \u0022off\u0022\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \u0022elementType\u0022: \u0022labels.text.fill\u0022,\r\n    \u0022stylers\u0022: [\r\n      {\r\n        \u0022color\u0022: \u0022#616161\u0022\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \u0022elementType\u0022: \u0022labels.text.stroke\u0022,\r\n    \u0022stylers\u0022: [\r\n      {\r\n        \u0022color\u0022: \u0022#f5f5f5\u0022\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \u0022featureType\u0022: \u0022administrative.land_parcel\u0022,\r\n    \u0022elementType\u0022: \u0022labels.text.fill\u0022,\r\n    \u0022stylers\u0022: [\r\n      {\r\n        \u0022color\u0022: \u0022#bdbdbd\u0022\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \u0022featureType\u0022: \u0022poi\u0022,\r\n    \u0022elementType\u0022: \u0022geometry\u0022,\r\n    \u0022stylers\u0022: [\r\n      {\r\n        \u0022color\u0022: \u0022#eeeeee\u0022\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \u0022featureType\u0022: \u0022poi\u0022,\r\n    \u0022elementType\u0022: \u0022labels.text.fill\u0022,\r\n    \u0022stylers\u0022: [\r\n      {\r\n        \u0022color\u0022: \u0022#757575\u0022\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \u0022featureType\u0022: \u0022poi.park\u0022,\r\n    \u0022elementType\u0022: \u0022geometry\u0022,\r\n    \u0022stylers\u0022: [\r\n      {\r\n        \u0022color\u0022: \u0022#e5e5e5\u0022\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \u0022featureType\u0022: \u0022poi.park\u0022,\r\n    \u0022elementType\u0022: \u0022labels.text.fill\u0022,\r\n    \u0022stylers\u0022: [\r\n      {\r\n        \u0022color\u0022: \u0022#9e9e9e\u0022\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \u0022featureType\u0022: \u0022road\u0022,\r\n    \u0022elementType\u0022: \u0022geometry\u0022,\r\n    \u0022stylers\u0022: [\r\n      {\r\n        \u0022color\u0022: \u0022#ffffff\u0022\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \u0022featureType\u0022: \u0022road.arterial\u0022,\r\n    \u0022elementType\u0022: \u0022labels.text.fill\u0022,\r\n    \u0022stylers\u0022: [\r\n      {\r\n        \u0022color\u0022: \u0022#757575\u0022\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \u0022featureType\u0022: \u0022road.highway\u0022,\r\n    \u0022elementType\u0022: \u0022geometry\u0022,\r\n    \u0022stylers\u0022: [\r\n      {\r\n        \u0022color\u0022: \u0022#dadada\u0022\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \u0022featureType\u0022: \u0022road.highway\u0022,\r\n    \u0022elementType\u0022: \u0022labels.text.fill\u0022,\r\n    \u0022stylers\u0022: [\r\n      {\r\n        \u0022color\u0022: \u0022#616161\u0022\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \u0022featureType\u0022: \u0022road.local\u0022,\r\n    \u0022elementType\u0022: \u0022labels.text.fill\u0022,\r\n    \u0022stylers\u0022: [\r\n      {\r\n        \u0022color\u0022: \u0022#9e9e9e\u0022\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \u0022featureType\u0022: \u0022transit.line\u0022,\r\n    \u0022elementType\u0022: \u0022geometry\u0022,\r\n    \u0022stylers\u0022: [\r\n      {\r\n        \u0022color\u0022: \u0022#e5e5e5\u0022\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \u0022featureType\u0022: \u0022transit.station\u0022,\r\n    \u0022elementType\u0022: \u0022geometry\u0022,\r\n    \u0022stylers\u0022: [\r\n      {\r\n        \u0022color\u0022: \u0022#eeeeee\u0022\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \u0022featureType\u0022: \u0022water\u0022,\r\n    \u0022elementType\u0022: \u0022geometry\u0022,\r\n    \u0022stylers\u0022: [\r\n      {\r\n        \u0022color\u0022: \u0022#c9c9c9\u0022\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \u0022featureType\u0022: \u0022water\u0022,\r\n    \u0022elementType\u0022: \u0022geometry.fill\u0022,\r\n    \u0022stylers\u0022: [\r\n      {\r\n        \u0022color\u0022: \u0022#d2d9e9\u0022\r\n      },\r\n      {\r\n        \u0022saturation\u0022: -10\r\n      },\r\n      {\r\n        \u0022visibility\u0022: \u0022on\u0022\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \u0022featureType\u0022: \u0022water\u0022,\r\n    \u0022elementType\u0022: \u0022labels.text.fill\u0022,\r\n    \u0022stylers\u0022: [\r\n      {\r\n        \u0022color\u0022: \u0022#9e9e9e\u0022\r\n      }\r\n    ]\r\n  }\r\n]",
+              pin: "\/sites\/all\/themes\/relaz\/images\/svg\/pin.svg",
+              popup: "",
+              pinAttributes: { pinWidth: 50, pinHeight: 75 },
+            },
+          ],
+          settings: {
+            width: "100%",
+            height: "400px",
+            style: {
+              maptype: "ROADMAP",
+              style:
+                " [\r\n  {\r\n    \u0022elementType\u0022: \u0022geometry\u0022,\r\n    \u0022stylers\u0022: [\r\n      {\r\n        \u0022color\u0022: \u0022#f5f5f5\u0022\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \u0022elementType\u0022: \u0022labels.icon\u0022,\r\n    \u0022stylers\u0022: [\r\n      {\r\n        \u0022visibility\u0022: \u0022off\u0022\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \u0022elementType\u0022: \u0022labels.text.fill\u0022,\r\n    \u0022stylers\u0022: [\r\n      {\r\n        \u0022color\u0022: \u0022#616161\u0022\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \u0022elementType\u0022: \u0022labels.text.stroke\u0022,\r\n    \u0022stylers\u0022: [\r\n      {\r\n        \u0022color\u0022: \u0022#f5f5f5\u0022\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \u0022featureType\u0022: \u0022administrative.land_parcel\u0022,\r\n    \u0022elementType\u0022: \u0022labels.text.fill\u0022,\r\n    \u0022stylers\u0022: [\r\n      {\r\n        \u0022color\u0022: \u0022#bdbdbd\u0022\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \u0022featureType\u0022: \u0022poi\u0022,\r\n    \u0022elementType\u0022: \u0022geometry\u0022,\r\n    \u0022stylers\u0022: [\r\n      {\r\n        \u0022color\u0022: \u0022#eeeeee\u0022\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \u0022featureType\u0022: \u0022poi\u0022,\r\n    \u0022elementType\u0022: \u0022labels.text.fill\u0022,\r\n    \u0022stylers\u0022: [\r\n      {\r\n        \u0022color\u0022: \u0022#757575\u0022\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \u0022featureType\u0022: \u0022poi.park\u0022,\r\n    \u0022elementType\u0022: \u0022geometry\u0022,\r\n    \u0022stylers\u0022: [\r\n      {\r\n        \u0022color\u0022: \u0022#e5e5e5\u0022\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \u0022featureType\u0022: \u0022poi.park\u0022,\r\n    \u0022elementType\u0022: \u0022labels.text.fill\u0022,\r\n    \u0022stylers\u0022: [\r\n      {\r\n        \u0022color\u0022: \u0022#9e9e9e\u0022\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \u0022featureType\u0022: \u0022road\u0022,\r\n    \u0022elementType\u0022: \u0022geometry\u0022,\r\n    \u0022stylers\u0022: [\r\n      {\r\n        \u0022color\u0022: \u0022#ffffff\u0022\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \u0022featureType\u0022: \u0022road.arterial\u0022,\r\n    \u0022elementType\u0022: \u0022labels.text.fill\u0022,\r\n    \u0022stylers\u0022: [\r\n      {\r\n        \u0022color\u0022: \u0022#757575\u0022\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \u0022featureType\u0022: \u0022road.highway\u0022,\r\n    \u0022elementType\u0022: \u0022geometry\u0022,\r\n    \u0022stylers\u0022: [\r\n      {\r\n        \u0022color\u0022: \u0022#dadada\u0022\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \u0022featureType\u0022: \u0022road.highway\u0022,\r\n    \u0022elementType\u0022: \u0022labels.text.fill\u0022,\r\n    \u0022stylers\u0022: [\r\n      {\r\n        \u0022color\u0022: \u0022#616161\u0022\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \u0022featureType\u0022: \u0022road.local\u0022,\r\n    \u0022elementType\u0022: \u0022labels.text.fill\u0022,\r\n    \u0022stylers\u0022: [\r\n      {\r\n        \u0022color\u0022: \u0022#9e9e9e\u0022\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \u0022featureType\u0022: \u0022transit.line\u0022,\r\n    \u0022elementType\u0022: \u0022geometry\u0022,\r\n    \u0022stylers\u0022: [\r\n      {\r\n        \u0022color\u0022: \u0022#e5e5e5\u0022\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \u0022featureType\u0022: \u0022transit.station\u0022,\r\n    \u0022elementType\u0022: \u0022geometry\u0022,\r\n    \u0022stylers\u0022: [\r\n      {\r\n        \u0022color\u0022: \u0022#eeeeee\u0022\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \u0022featureType\u0022: \u0022water\u0022,\r\n    \u0022elementType\u0022: \u0022geometry\u0022,\r\n    \u0022stylers\u0022: [\r\n      {\r\n        \u0022color\u0022: \u0022#c9c9c9\u0022\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \u0022featureType\u0022: \u0022water\u0022,\r\n    \u0022elementType\u0022: \u0022geometry.fill\u0022,\r\n    \u0022stylers\u0022: [\r\n      {\r\n        \u0022color\u0022: \u0022#d2d9e9\u0022\r\n      },\r\n      {\r\n        \u0022saturation\u0022: -10\r\n      },\r\n      {\r\n        \u0022visibility\u0022: \u0022on\u0022\r\n      }\r\n    ]\r\n  },\r\n  {\r\n    \u0022featureType\u0022: \u0022water\u0022,\r\n    \u0022elementType\u0022: \u0022labels.text.fill\u0022,\r\n    \u0022stylers\u0022: [\r\n      {\r\n        \u0022color\u0022: \u0022#9e9e9e\u0022\r\n      }\r\n    ]\r\n  }\r\n]",
+              pin: "",
+            },
+            map_center: {
+              center_coordinates: { lat: "36.778261", lon: " -119.4179324" },
+            },
+            popup: {
+              choice: "0",
+              view_mode: "air",
+              text: "field_property_address",
+              label: 0,
+              shadow_style: "0",
+              padding: "13",
+              border_radius: "7",
+              border_width: "1",
+              border_color: "#cccccc",
+              background_color: "#ffffff",
+              min_width: "auto",
+              max_width: "auto",
+              min_height: "auto",
+              max_height: "auto",
+              arrow_style: "0",
+              arrow_size: "10",
+              arrow_position: "50",
+              disable_auto_pan: "0",
+              hide_close_button: "0",
+              disable_animation: "1",
+              classes: {
+                content_container: "sgmpopup-content-wrapper",
+                background: "sgmpopup-content",
+                arrow: "sgmpopup-arrow",
+                arrow_outer: "sgmpopup-arrow-outer",
+                arrow_inner: "sgmpopup-arrow-inner",
+              },
+            },
+            zoom: { default: "15", max: "17", min: "5" },
+            maptypecontrol: 1,
+            scalecontrol: 1,
+            rotatecontrol: 1,
+            draggable: 1,
+            mobile_draggable: 1,
+            streetviewcontrol: 1,
+            zoomcontrol: 1,
+            scrollwheel: 1,
+            empty_fields_handler: "",
+            empty_fields_emptyfieldtext_empty_text: "",
+            field_formatter_label: "",
+            custom_link_to_entity: 0,
+            custom_prefix: "",
+            custom_suffix: "",
+            custom_reverse: 0,
+            custom_trim: 0,
+            custom_strtolower: 0,
+            custom_strtoupper: 0,
+            custom_ucfirst: 0,
+            custom_ucwords: 0,
+            custom_strip_tags: 0,
+            custom_strip_preserve: "",
+          },
+          id: "styled-google-map-64a2293a89f95",
+        },
+        bootstrap: {
+          anchorsFix: 0,
+          anchorsSmoothScrolling: 0,
+          popoverEnabled: 0,
+          popoverOptions: {
+            animation: 1,
+            html: 0,
+            placement: "right",
+            selector: "",
+            trigger: "click",
+            title: "",
+            content: "",
+            delay: 0,
+            container: "body",
+          },
+          tooltipEnabled: 1,
+          tooltipOptions: {
+            animation: 1,
+            html: 0,
+            placement: "auto left",
+            selector: "",
+            trigger: "hover focus",
+            delay: 0,
+            container: "body",
+          },
+        },
+      });
+    </script>
+  </head>
+  <body
+    class="html not-front not-logged-in no-sidebars page-node page-node- page-node-83661131 node-type-property navbar-is-fixed-top user-0 auth-526 property-template-kit anonymous listing-preview book-showing-enabled youtube-embed-processed screen-width-lg outside-menu-open"
+    style="visibility: visible"
+  >
+    <span
+      id="main-content"
+      class="property-page-main-content"
+      tabindex="-1"
+    ></span>
+    <div class="region region-content">
+      <section id="block-system-main" class="block block-system clearfix">
+        <div id="overlay-description" style="display: none">
+          <div class="inner pos-r">
+            <div class="close-overlay"><i class="pe-7s-close"></i></div>
+            <div class="overlay-content-item" overlay-content="description">
+              <p>
+                Imagine coming home to unwind on your private balcony and enjoy
+                breathtaking 180-degree ocean views extending to Catalina
+                Island! Ideally set on an elevated lot near popular
+                destinations, this stunning Laguna Beach gem treats you to a
+                dream coastal lifestyle. Across the sunlit interior, discover a
+                beautiful combination of crisp white tones, travertine tile
+                flooring, and expansive glass sliders that frame inspiring
+                panoramas. Allowing a seamless flow, the open-concept layout has
+                a generously sized living room where you can gather with guests
+                around the tile-surround fireplace. Steps away from the dining
+                area, the kitchen equips the home chef with stainless steel
+                appliances, handsome wood cabinetry, plus matching granite
+                countertops and backsplash. Versatile, well-sized bedrooms await
+                downstairs, including the primary suite adorned by a fireplace
+                and large doors that whisk you to a tropical deck with a
+                soothing hot tub. A tastefully tiled ensuite immerses you in
+                spa-like relaxation with a double vanity and an enclosed walk-in
+                shower. One of the best spots to relish sensational sunsets is
+                on the oversized balcony as you sip a refreshing nightcap around
+                the fire pit. Completing this remarkable haven’s appeal is an
+                attached 2-car garage, a lushly landscaped backyard, plus close
+                proximity to Moulton Meadows Park, Victoria Beach, local shops,
+                and restaurants. Why just read about this must-see residence
+                when you can experience it yourself? Come for a tour while you
+                still can!
+              </p>
+            </div>
+            <div class="overlay-content-item" overlay-content="docs">
+              <div
+                class="view view-property-docs view-id-property_docs view-display-id-property_docs_embed view-dom-id-52fc33a3d63c68ffb3ad5933f55f2668"
+              >
+                <div class="view-header">
+                  <div class="doc-view-title">Property Documents</div>
+                  <div class="title-separator"></div>
+                </div>
+
+                <div class="view-content">
+                  <div
+                    class="views-row views-row-1 views-row-odd views-row-first"
+                  >
+                    <div class="views-field views-field-title">
+                      <span class="field-content"
+                        ><a class="use-ajax abs-throbber ajax-processed"
+                          ><span class="doc-ext fa fa-file-text-o"></span
+                          ><span class="doc-title"> Sample Document 1</span></a
+                        ></span
+                      >
+                    </div>
+                  </div>
+                  <div class="views-row views-row-2 views-row-even">
+                    <div class="views-field views-field-title">
+                      <span class="field-content"
+                        ><a class="use-ajax abs-throbber ajax-processed"
+                          ><span class="doc-ext fa fa-file-text-o"></span
+                          ><span class="doc-title"> Sample Document 2</span></a
+                        ></span
+                      >
+                    </div>
+                  </div>
+                  <div
+                    class="views-row views-row-3 views-row-odd views-row-last"
+                  >
+                    <div class="views-field views-field-title">
+                      <span class="field-content"
+                        ><a class="use-ajax abs-throbber ajax-processed"
+                          ><span class="doc-ext fa fa-file-text-o"></span
+                          ><span class="doc-title"> Sample Document 3</span></a
+                        ></span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="overlay-content-item" overlay-content="brochures">
+              <span class="njmls-hide mls-hide"
+                ><div
+                  class="view view-books view-id-books view-display-id-property_download_pdf view-dom-id-7a06efb434dc0774860b126242eb0f09 jquery-once-2-processed refresh-processed"
+                >
+                  <div class="view-content">
+                    <div
+                      class="views-row views-row-1 views-row-odd views-row-first views-row-last"
+                    >
+                      <div
+                        class="views-field views-field-bookmaker-download-link"
+                      >
+                        <span class="field-content"
+                          ><a
+                            class="brochure-download-link use-ajax ajax-processed"
+                            ><img
+                              src="./assets/file.svg"
+                              class="doc-icon-svg"
+                            /><span class="brochure-title"
+                              >Flyers - 567 Kit Lane</span
+                            ></a
+                          ></span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div></span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="main-menu" hidden>
+          <button class="close-menu-button outside-menu-toggle">
+            <span class="close-ex"></span>Close
+          </button>
+          <div class="item-list">
+            <ul
+              id="property-nav-links"
+              class="primary-links kit-links sticky-links links-count-7 links-count-alot"
+            >
+              <li
+                class="sticky-link sticky-link-overview sticky-link-overview first"
+              >
+                <a class="section-overview">Overview</a>
+              </li>
+              <li
+                class="sticky-link sticky-link-amenities sticky-link-amenities"
+              >
+                <a class="section-amenities">Features</a>
+              </li>
+              <li class="sticky-link sticky-link-photos sticky-link-photos">
+                <a class="section-photos" data="ps-open">Photos</a>
+              </li>
+              <li class="sticky-link sticky-link-videos sticky-link-videos">
+                <a class="section-videos">Video</a>
+              </li>
+              <li class="sticky-link sticky-link-vtour sticky-link-vtour">
+                <a class="section-vtour">3D Tour</a>
+              </li>
+              <li
+                class="sticky-link sticky-link-hotspot-floorplans sticky-link-hotspot-floorplans"
+              >
+                <a class="section-hotspot-floorplans">Floor Plans</a>
+              </li>
+              <li
+                class="sticky-link njmls-hide sticky-link njmls-hide-map sticky-link njmls-hide-map last"
+              >
+                <a class="section-map">Map</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="header-content affix">
+          <h1
+            class="property-title m-y-0 njmls-hide font-sans-bold hidden-xs hidden-sm"
+          >
+            <div class="property-address-top">
+              <span class="thoroughfare">567 Kit Lane</span>
+            </div>
+          </h1>
+          <button
+            class="main-menu-toggle outside-menu-toggle multi-gallery-close affix-top"
+          >
+            <div class="lines">
+              <div class="line line-1"></div>
+              <div class="line line-2"></div>
+              <div class="line line-3"></div>
+            </div>
+            <div class="text text-black text-uppercase">
+              <span class="hidden-xs hidden-sm">Menu</span>
+              <span class="hidden-md hidden-lg"
+                ><div class="property-address-top">
+                  <span class="thoroughfare">567 Kit Lane</span>
+                </div></span
+              >
+            </div>
+          </button>
+          <div class="header-cta">
+            <div class="sticky-link mls-hide">
+              <a
+                class="multi-gallery-close cta-top-contact text-uppercase text-black"
+              >
+                <svg
+                  enable-background="new 0 0 24 24"
+                  height="21"
+                  viewBox="0 0 24 24"
+                  width="21"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g id="Layer_1">
+                    <path
+                      d="m11.501 1.5v19.637l-5.61-6.953c-.173-.215-.488-.248-.703-.074-.216.173-.249.488-.075.703l6.431 7.97c.02.025.182.217.457.217.276 0 .438-.194.458-.219l6.43-7.969c.172-.214.138-.531-.075-.703s-.53-.139-.703.074l-5.61 6.953v-19.636c0-.276-.224-.5-.5-.5s-.5.223-.5.5z"
+                    ></path>
+                  </g>
+                </svg>
+                Request Info</a
+              >
+            </div>
+          </div>
+        </div>
+        <div
+          id="hero"
+          class="full-bg"
+          style="
+            background-image: url(https://s3.amazonaws.com/fse1.relahq.com/public/styles/kb_full/s3/property-images/prop-nid-83661131/adobestock_198467490.jpg);
+          "
+        >
+          <button
+            id="scroll-cta"
+            class="hidden-xs hidden-sm animated slideInLeft"
+          >
+            <span class="text">Scroll</span>
+            <svg
+              id="arrow-down-long"
+              enable-background="new 0 0 100 100"
+              height="512"
+              viewBox="0 0 100 100"
+              width="512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="m53.708 80.251-2.556 3.759-.002-71.489h-2l.002 71.041-2.035-3.541-1.734.996 4.682 8.149 5.297-7.79z"
+              ></path>
+            </svg>
+          </button>
+
+          <div class="hero-text njmls-hide">
+            <div class="inner">
+              <div class="property-title m-t-1 font-serif animated fadeInUp">
+                <h1>567 Kit Lane</h1>
+              </div>
+
+              <div
+                class="h3 text-white property-title-bottom font-serif animated slideInUp has-price-1"
+              >
+                <div class="property-price">
+                  <div class="field-label price-label"></div>
+                  <div class="price-field list-price">$2,350,000</div>
+                </div>
+                <div class="property-address-bottom">
+                  <span class="locality">Anywhere</span>,
+                  <span class="administrative_area">CA</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="cut-animate-wrapper animated fadeInUp">
+            <div class="cut"></div>
+          </div>
+          <div class="underlay"></div>
+        </div>
+        <div class="property-content-wrap full-width d-inline-block pos-r">
+          <div id="details-box-wrap">
+            <div class="property-details pos-r animated fadeInUp">
+              <div id="dots-details" class="bg-dots"></div>
+              <div class="group-property-details prop-details-kit">
+                <div class="prop-detail prop-detail-beds field">
+                  <span class="field-prefix"
+                    ><span class="bg-color-primary">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="512"
+                        height="512"
+                        viewBox="0 0 512 512"
+                      >
+                        <path
+                          d="M496,344h-8V280a32.042,32.042,0,0,0-32-32V112a32.042,32.042,0,0,0-32-32H88a32.042,32.042,0,0,0-32,32V248a32.042,32.042,0,0,0-32,32v64H16a8,8,0,0,0-8,8v32a8,8,0,0,0,8,8h8v32a8,8,0,0,0,8,8H56a7.99,7.99,0,0,0,7.84-6.43L70.56,392H441.44l6.72,33.57A7.99,7.99,0,0,0,456,432h24a8,8,0,0,0,8-8V392h8a8,8,0,0,0,8-8V352A8,8,0,0,0,496,344ZM72,112A16.021,16.021,0,0,1,88,96H424a16.021,16.021,0,0,1,16,16V248H424V216a32.042,32.042,0,0,0-32-32H296a32.042,32.042,0,0,0-32,32v32H248V216a32.042,32.042,0,0,0-32-32H120a32.042,32.042,0,0,0-32,32v32H72ZM408,216v32H280V216a16.021,16.021,0,0,1,16-16h96A16.021,16.021,0,0,1,408,216Zm-176,0v32H104V216a16.021,16.021,0,0,1,16-16h96A16.021,16.021,0,0,1,232,216ZM40,280a16.021,16.021,0,0,1,16-16H456a16.021,16.021,0,0,1,16,16v64H40Zm9.44,136H40V392H54.24ZM472,416h-9.44l-4.8-24H472Zm16-40H24V360H488Z"
+                        ></path>
+                      </svg> </span></span
+                  ><span class="count">4 Bedrooms</span>
+                </div>
+                <div class="prop-detail prop-detail-baths field">
+                  <span class="field-prefix"
+                    ><span class="bg-color-primary"
+                      ><svg
+                        id="Layer_1"
+                        height="512"
+                        viewBox="0 0 512 512"
+                        width="512"
+                        xmlns="http://www.w3.org/2000/svg"
+                        data-name="Layer 1"
+                      >
+                        <path
+                          d="m474.073 261h-359.073v-169.7a32.5 32.5 0 0 1 65 0v6.7h-15.18a5.9 5.9 0 0 0 -5.82 6.055v17.945h-12.308a5.578 5.578 0 0 0 -5.692 5.8v25.974c0 3.314 2.379 6.224 5.692 6.224h80.087a6.386 6.386 0 0 0 6.221-6.222v-25.976a6.027 6.027 0 0 0 -6.221-5.8h-11.779v-17.945a6.354 6.354 0 0 0 -6.349-6.055h-16.651v-6.7a44.5 44.5 0 0 0 -89 0v169.7h-65.073a31.5 31.5 0 0 0 0 63h12.073v37.568a92.519 92.519 0 0 0 44.564 79.195l-14.174 14.12a5.983 5.983 0 1 0 8.437 8.484l16.818-16.9a92 92 0 0 0 36.718 7.533h227.274a91.985 91.985 0 0 0 37.473-7.858l16.07 16.106a5.989 5.989 0 1 0 8.484-8.454l-13.564-13.449a92.5 92.5 0 0 0 43.9-78.777v-37.568h12.073a31.5 31.5 0 0 0 0-63zm-253.073-113h-68v-14h68zm-18-26h-32v-12h32zm247 239.568a80.549 80.549 0 0 1 -43.733 71.681 5.391 5.391 0 0 0 -1.532.739 79.791 79.791 0 0 1 -35.1 8.012h-227.272a80.36 80.36 0 0 1 -80.363-80.432v-37.568h388zm24.073-49.568h-436.146a19.5 19.5 0 0 1 0-39h436.146a19.5 19.5 0 0 1 0 39z"
+                        ></path>
+                        <path
+                          d="m193 174.339a6 6 0 0 0 -12 0v6.493a6 6 0 0 0 12 0z"
+                        ></path>
+                        <path
+                          d="m171 174.339a6 6 0 0 0 -12 0v6.493a6 6 0 0 0 12 0z"
+                        ></path>
+                        <path
+                          d="m214 174.339a6 6 0 0 0 -12 0v6.493a6 6 0 0 0 12 0z"
+                        ></path>
+                        <path
+                          d="m187 196.478a6 6 0 0 0 -6 6v6.493a6 6 0 0 0 12 0v-6.493a6 6 0 0 0 -6-6z"
+                        ></path>
+                        <path
+                          d="m165 196.478a6 6 0 0 0 -6 6v6.493a6 6 0 0 0 12 0v-6.493a6 6 0 0 0 -6-6z"
+                        ></path>
+                        <path
+                          d="m208 196.478a6 6 0 0 0 -6 6v6.493a6 6 0 0 0 12 0v-6.493a6 6 0 0 0 -6-6z"
+                        ></path></svg></span></span
+                  ><span class="count">4 Bathrooms</span>
+                </div>
+                <div class="prop-detail prop-detail-sqft field">
+                  <span class="field-prefix"
+                    ><span class="bg-color-primary"
+                      ><svg
+                        id="Layer_1"
+                        enable-background="new 0 0 100 100"
+                        height="512"
+                        viewBox="0 0 100 100"
+                        width="512"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="m89 10h-78c-.5522461 0-1 .4472656-1 1v78c0 .5527344.4477539 1 1 1h78c.5522461 0 1-.4472656 1-1v-78c0-.5527344-.4477539-1-1-1zm-25.9907227 78v-10.0830078c0-.5527344-.4477539-1-1-1s-1 .4472656-1 1v10.0830078h-49.0092773v-33.2783203h34.2763672v7.8535156c0 .5527344.4477539 1 1 1s1-.4472656 1-1v-8.8535156c0-.5527344-.4477539-1-1-1h-35.2763672v-13.6123047h35.2763672c.5522461 0 1-.4472656 1-1v-8.8525391c0-.5527344-.4477539-1-1-1s-1 .4472656-1 1v7.8525391h-34.2763672v-25.109375h34.2763672v8.1513672c0 .5527344.4477539 1 1 1s1-.4472656 1-1v-8.1513672h12.7329102v8.1513672c0 .5527344.4477539 1 1 1s1-.4472656 1-1v-8.1513672h24.9907226v25.109375h-24.9907227v-7.8525391c0-.5527344-.4477539-1-1-1s-1 .4472656-1 1v24.4648438c0 .5527344.4477539 1 1 1s1-.4472656 1-1v-14.6123047h24.9907227v23.4384766h-25.9907227c-.5522461 0-1 .4472656-1 1v6.3886719c0 .5527344.4477539 1 1 1s1-.4472656 1-1v-5.3886719h24.9907227v23.4521484z"
+                        ></path></svg></span></span
+                  ><span class="count">3,400 sqft</span
+                  ><span class="field-suffix">Home Size</span>
+                </div>
+                <div class="prop-detail prop-detail-lotsize field last">
+                  <span class="field-prefix"
+                    ><span class="bg-color-primary">
+                      <svg
+                        version="1.1"
+                        id="Capa_1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        x="0px"
+                        y="0px"
+                        viewBox="0 0 511.999 511.999"
+                        style="enable-background: new 0 0 511.999 511.999"
+                        xml:space="preserve"
+                      >
+                        <g>
+                          <g>
+                            <path
+                              d="M510.062,328.728c-0.351-0.387-0.746-0.742-1.18-1.053c-0.001-0.001-0.004-0.003-0.008-0.006
+			c-0.392-0.281-0.813-0.525-1.254-0.726l-67.207-32.069l67.082-32.009c2.114-0.917,3.747-2.791,4.304-5.145
+			c0.356-1.51,0.227-3.041-0.303-4.41c-0.338-0.877-0.833-1.667-1.447-2.341c-0.345-0.379-0.73-0.724-1.153-1.029
+			c0-0.001,0-0.001,0-0.001c-0.003-0.002-0.005-0.003-0.007-0.005c-0.398-0.286-0.823-0.534-1.272-0.739l-67.204-32.067
+			l67.083-32.01c2.114-0.917,3.747-2.79,4.303-5.144c0.355-1.506,0.227-3.032-0.299-4.4c-0.336-0.875-0.827-1.664-1.439-2.338
+			c-0.351-0.387-0.746-0.742-1.18-1.053c-0.001-0.002-0.004-0.003-0.008-0.006c-0.392-0.281-0.812-0.525-1.254-0.726
+			l-140.573-67.077c-3.723-1.779-8.188-0.2-9.966,3.528c-1.778,3.726-0.198,8.188,3.528,9.966l126.552,60.388l-231.364,110.4
+			l-230.984-110.4l230.984-110.4l56.037,26.739c3.723,1.78,8.188,0.2,9.966-3.528c1.778-3.726,0.199-8.188-3.528-9.966
+			l-59.258-28.277c-2.038-0.974-4.406-0.973-6.443,0.002L4.499,171.393c-2.112,0.918-3.743,2.79-4.298,5.142
+			c-0.356,1.506-0.228,3.032,0.299,4.4c0.335,0.875,0.827,1.664,1.438,2.338c0.351,0.387,0.746,0.742,1.18,1.053
+			c0.003,0.003,0.006,0.004,0.008,0.006c0.391,0.28,0.81,0.523,1.25,0.724l67.1,32.071L4.5,249.139
+			c-2.112,0.917-3.744,2.79-4.299,5.142c-0.355,1.505-0.228,3.03,0.297,4.397c0.34,0.888,0.84,1.686,1.463,2.366
+			c0.341,0.374,0.723,0.714,1.141,1.016c0.003,0.002,0.004,0.003,0.008,0.006c0.397,0.286,0.823,0.534,1.272,0.739l67.095,32.068
+			L4.5,326.885c-2.113,0.917-3.744,2.789-4.299,5.142c-0.356,1.509-0.227,3.038,0.302,4.407c0.331,0.86,0.813,1.638,1.411,2.304
+			c0.002,0.002,0.004,0.005,0.005,0.005c0.369,0.411,0.786,0.784,1.246,1.109c0.004,0.002,0.006,0.004,0.009,0.006
+			c0.377,0.266,0.779,0.497,1.202,0.69l248.196,118.627c1.02,0.488,2.121,0.731,3.224,0.731c1.1,0,2.201-0.243,3.219-0.729
+			L507.496,340.61c2.114-0.917,3.747-2.79,4.303-5.144c0.355-1.506,0.227-3.033-0.299-4.4
+			C511.165,330.191,510.673,329.401,510.062,328.728z M255.798,444.146l-230.984-110.4l63.997-30.587l44.026,21.043
+			c1.041,0.497,2.138,0.733,3.219,0.733c2.79,0,5.467-1.569,6.75-4.254c1.781-3.725,0.204-8.188-3.521-9.968L93.313,288.74
+			c-0.713-0.512-1.51-0.887-2.349-1.123L24.814,256l63.996-30.587l163.761,78.27c1.02,0.488,2.121,0.731,3.224,0.731
+			c1.1,0,2.201-0.243,3.219-0.729l164.154-78.329c0.315,0.215,0.643,0.415,0.998,0.584l62.995,30.06L255.798,366.4l-68.459-32.72
+			c-3.728-1.783-8.189-0.203-9.968,3.521c-1.781,3.725-0.204,8.188,3.521,9.968l71.681,34.26c1.02,0.488,2.121,0.731,3.224,0.731
+			c1.1,0,2.201-0.243,3.219-0.729l164.041-78.275l64.106,30.59L255.798,444.146z"
+                            ></path>
+                          </g>
+                        </g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                      </svg> </span></span
+                  ><span class="count">9,100 sf</span
+                  ><span class="field-suffix">Lot Size</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="overview" class="section container section-details">
+            <div class="col-xs-12 col-md-5">
+              <div
+                id="arrow-overview"
+                class="arrow-mask-wrap arrow-mask-right affix"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 94.33 17.9"
+                >
+                  <defs>
+                    <style>
+                      .cls-1 {
+                        fill: #fff;
+                        stroke: #231f20;
+                        stroke-miterlimit: 10;
+                      }
+                    </style>
+                  </defs>
+                  <g id="arrow-right-long" data-name="arrow-right-long-Layer 2">
+                    <g
+                      id="arrow-right-long-Layer_1-2"
+                      data-name="arrow-right-long-Layer 1"
+                    >
+                      <polyline
+                        class="cls-1"
+                        points="84.59 0.37 93.6 8.57 84.59 17.55"
+                      ></polyline>
+                      <line class="cls-1" x1="93.6" y1="8.57" y2="8.57"></line>
+                    </g>
+                  </g>
+                </svg>
+              </div>
+
+              <h2 class="section-title">
+                About <br />
+                the Property
+              </h2>
+
+              <div class="overview-extras">
+                <ul class="extras-wrapper">
+                  <li class="extra-item">
+                    <a
+                      onclick="return false;"
+                      class="more-link"
+                      overlay-target="brochures"
+                    >
+                      <span class="dl-extra-icon"
+                        ><svg
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8.0625 10.3135L12 14.2499L15.9375 10.3135"
+                            stroke="#C0B281"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          ></path>
+                          <path
+                            d="M12 3.75V14.2472"
+                            stroke="#C0B281"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          ></path>
+                          <path
+                            d="M20.25 14.25V19.5C20.25 19.6989 20.171 19.8897 20.0303 20.0303C19.8897 20.171 19.6989 20.25 19.5 20.25H4.5C4.30109 20.25 4.11032 20.171 3.96967 20.0303C3.82902 19.8897 3.75 19.6989 3.75 19.5V14.25"
+                            stroke="#C0B281"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          ></path>
+                        </svg>
+                      </span>
+                      <div class="link-title">Brochure</div>
+                    </a>
+                  </li>
+                  <li class="extra-item">
+                    <a
+                      onclick="return false;"
+                      class="more-link"
+                      overlay-target="docs"
+                    >
+                      <span class="dl-extra-icon"
+                        ><svg
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8.0625 10.3135L12 14.2499L15.9375 10.3135"
+                            stroke="#C0B281"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          ></path>
+                          <path
+                            d="M12 3.75V14.2472"
+                            stroke="#C0B281"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          ></path>
+                          <path
+                            d="M20.25 14.25V19.5C20.25 19.6989 20.171 19.8897 20.0303 20.0303C19.8897 20.171 19.6989 20.25 19.5 20.25H4.5C4.30109 20.25 4.11032 20.171 3.96967 20.0303C3.82902 19.8897 3.75 19.6989 3.75 19.5V14.25"
+                            stroke="#C0B281"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          ></path>
+                        </svg>
+                      </span>
+                      <div class="link-title">Documents</div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="top-cta-wrap m-y-4 full-width">
+                <span class="sticky-link mls-hide">
+                  <a class="btn btn-lg btn-default m-r-1 btn-cta-contact"
+                    >Get in Touch</a
+                  >
+                </span>
+                <a
+                  class="use-ajax btn btn-lg btn-default btn-cta-tour ajax-processed affix"
+                  ><i class="fa fa-calendar-o m-r-1"></i> Schedule a Tour</a
+                >
+              </div>
+            </div>
+            <div class="col-xs-12 col-md-7">
+              <div class="property-description">
+                <div
+                  class="view view-virtual-open-house view-id-virtual_open_house view-display-id-panel_property view-open-house-date view-display-id-block-plain voh-slider mls-hide view-dom-id-3a62f04848cd975dad1e6b973281ac35"
+                >
+                  <div class="view-content owl-carousel owl-theme owl-loaded">
+                    <div class="owl-stage-outer">
+                      <div
+                        class="owl-stage"
+                        style="
+                          transform: translate3d(-2524px, 0px, 0px);
+                          transition: all 0.75s ease 0s;
+                          width: 3786px;
+                        "
+                      >
+                        <div
+                          class="owl-item cloned"
+                          style="width: 631px; margin-right: 0px"
+                        >
+                          <div
+                            class="views-row views-row-1 views-row-odd views-row-first"
+                          >
+                            <div class="tagline">Open House</div>
+                            <div class="day">
+                              <span class="hidden-xs hidden-sm"
+                                >Wednesday Aug 21st</span
+                              >
+                              <span class="hidden-md hidden-lg"
+                                >Wed Aug 21st</span
+                              >
+                            </div>
+                            <div class="time">9:45AM - 11:45AM</div>
+                            <div class="link"></div>
+                          </div>
+                        </div>
+                        <div
+                          class="owl-item cloned"
+                          style="width: 631px; margin-right: 0px"
+                        >
+                          <div
+                            class="views-row views-row-2 views-row-even views-row-last"
+                          >
+                            <div class="tagline">Broker Open</div>
+                            <div class="day">
+                              <span class="hidden-xs hidden-sm"
+                                >Saturday Aug 31st</span
+                              >
+                              <span class="hidden-md hidden-lg"
+                                >Sat Aug 31st</span
+                              >
+                            </div>
+                            <div class="time">9:45AM - 11:15AM</div>
+                            <div class="link"></div>
+                          </div>
+                        </div>
+                        <div
+                          class="owl-item"
+                          style="width: 631px; margin-right: 0px"
+                        >
+                          <div
+                            class="views-row views-row-1 views-row-odd views-row-first"
+                          >
+                            <div class="tagline">Open House</div>
+                            <div class="day">
+                              <span class="hidden-xs hidden-sm"
+                                >Wednesday Aug 21st</span
+                              >
+                              <span class="hidden-md hidden-lg"
+                                >Wed Aug 21st</span
+                              >
+                            </div>
+                            <div class="time">9:45AM - 11:45AM</div>
+                            <div class="link"></div>
+                          </div>
+                        </div>
+                        <div
+                          class="owl-item"
+                          style="width: 631px; margin-right: 0px"
+                        >
+                          <div
+                            class="views-row views-row-2 views-row-even views-row-last"
+                          >
+                            <div class="tagline">Broker Open</div>
+                            <div class="day">
+                              <span class="hidden-xs hidden-sm"
+                                >Saturday Aug 31st</span
+                              >
+                              <span class="hidden-md hidden-lg"
+                                >Sat Aug 31st</span
+                              >
+                            </div>
+                            <div class="time">9:45AM - 11:15AM</div>
+                            <div class="link"></div>
+                          </div>
+                        </div>
+                        <div
+                          class="owl-item cloned active"
+                          style="width: 631px; margin-right: 0px"
+                        >
+                          <div
+                            class="views-row views-row-1 views-row-odd views-row-first"
+                          >
+                            <div class="tagline">Open House</div>
+                            <div class="day">
+                              <span class="hidden-xs hidden-sm"
+                                >Wednesday Aug 21st</span
+                              >
+                              <span class="hidden-md hidden-lg"
+                                >Wed Aug 21st</span
+                              >
+                            </div>
+                            <div class="time">9:45AM - 11:45AM</div>
+                            <div class="link"></div>
+                          </div>
+                        </div>
+                        <div
+                          class="owl-item cloned"
+                          style="width: 631px; margin-right: 0px"
+                        >
+                          <div
+                            class="views-row views-row-2 views-row-even views-row-last"
+                          >
+                            <div class="tagline">Broker Open</div>
+                            <div class="day">
+                              <span class="hidden-xs hidden-sm"
+                                >Saturday Aug 31st</span
+                              >
+                              <span class="hidden-md hidden-lg"
+                                >Sat Aug 31st</span
+                              >
+                            </div>
+                            <div class="time">9:45AM - 11:15AM</div>
+                            <div class="link"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="owl-controls">
+                      <div class="owl-nav">
+                        <div class="owl-prev">
+                          <span class="icon icon-arrow-67"></span>
+                        </div>
+                        <div class="owl-next">
+                          <span class="icon icon-arrow-68"></span>
+                        </div>
+                      </div>
+                      <div class="owl-dots">
+                        <div class="owl-dot active"><span></span></div>
+                        <div class="owl-dot"><span></span></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <p>
+                  Imagine coming home to unwind on your private balcony and
+                  enjoy breathtaking 180-degree ocean views extending to
+                  Catalina Island! Ideally set on an elevated lot near popular
+                  destinations, this stunning Laguna Beach gem treats you to a
+                  dream coastal lifestyle. Across the sunlit interior, discover
+                  a beautiful combination of crisp white tones, travertine tile
+                  flooring, and expansive glass sliders that frame inspiring
+                  panoramas. Allowing a seamless flow, the open-concept layout
+                  has a generously sized living room where you can gather with
+                  guests around the tile-surround fireplace. Steps away from the
+                  dining area, the kitchen...
+                  <button
+                    class="text-left p-l-0 more-link pull-left full-width p-b-1 text-black m-t-2 m-b-2"
+                    overlay-target="description"
+                  >
+                    <b>Read More <span class="m-l-1">›</span></b>
+                  </button>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div id="amenities" class="section container">
+            <div class="col-xs-12 col-md-5 pull-right">
+              <div
+                id="arrow-amenities"
+                class="arrow-mask-wrap arrow-mask-left affix-top"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 94.33 17.9"
+                >
+                  <defs>
+                    <style>
+                      .cls-1 {
+                        fill: #fff;
+                        stroke: #231f20;
+                        stroke-miterlimit: 10;
+                      }
+                    </style>
+                  </defs>
+                  <g id="Layer_2" data-name="Layer 2">
+                    <g id="Layer_1-2" data-name="Layer 1">
+                      <polyline
+                        class="cls-1"
+                        points="9.74 17.54 0.72 9.34 9.74 0.35"
+                      ></polyline>
+                      <line
+                        class="cls-1"
+                        x1="0.73"
+                        y1="9.34"
+                        x2="94.33"
+                        y2="9.34"
+                      ></line>
+                    </g>
+                  </g>
+                </svg>
+              </div>
+              <h2 class="section-title text-right">
+                Features &amp; <br />
+                Amenities
+              </h2>
+            </div>
+            <div class="col-xs-12 col-md-7">
+              <div class="item-list">
+                <ul id="property-amenities-list" class="amenity-item-list">
+                  <li class="amenity-item first">Mountain Views</li>
+                  <li class="amenity-item">Beach Access</li>
+                  <li class="amenity-item">Gated Community</li>
+                  <li class="amenity-item">High Ceilings</li>
+                  <li class="amenity-item">Open Floor Plan</li>
+                  <li class="amenity-item">Shopping Nearby</li>
+                  <li class="amenity-item">Stainless Steel Appliances</li>
+                  <li class="amenity-item">Walk-In Closets</li>
+                  <li class="amenity-item">Quiet and Private</li>
+                  <li class="amenity-item">Ocean Views</li>
+                  <li class="amenity-item">Heated Floors</li>
+                  <li class="amenity-item">Frameless Glass Showers</li>
+                  <li class="amenity-item">Heated Pool</li>
+                  <li class="amenity-item">Community Pool</li>
+                  <li class="amenity-item">Community Clubhouse</li>
+                  <li class="amenity-item last">City Lights Views</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div id="photos" class="section photo-wrap pos-r">
+            <div class="cut"></div>
+
+            <div class="container photo-grid-wrap pos-r">
+              <div id="dots-photos-top" class="bg-dots"></div>
+              <div class="col-xs-12">
+                <div class="title-wrap">
+                  <div
+                    id="arrow-photos"
+                    class="arrow-mask-wrap arrow-mask-right affix-top"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 94.33 17.9"
+                    >
+                      <defs>
+                        <style>
+                          .cls-1 {
+                            fill: #fff;
+                            stroke: #231f20;
+                            stroke-miterlimit: 10;
+                          }
+                        </style>
+                      </defs>
+                      <g
+                        id="arrow-right-long"
+                        data-name="arrow-right-long-Layer 2"
+                      >
+                        <g
+                          id="arrow-right-long-Layer_1-2"
+                          data-name="arrow-right-long-Layer 1"
+                        >
+                          <polyline
+                            class="cls-1"
+                            points="84.59 0.37 93.6 8.57 84.59 17.55"
+                          ></polyline>
+                          <line
+                            class="cls-1"
+                            x1="93.6"
+                            y1="8.57"
+                            y2="8.57"
+                          ></line>
+                        </g>
+                      </g>
+                    </svg>
+                  </div>
+                  <h2 class="section-title">Photo <br />Gallery</h2>
+                  <button
+                    data="ps-open"
+                    aria-label="View photo gallery"
+                    class="pull-left main-gallery-cta text-center"
+                  >
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M10.5 4.5H4.5V10.5H10.5V4.5Z"
+                        stroke="#C0B281"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></path>
+                      <path
+                        d="M19.5 4.5H13.5V10.5H19.5V4.5Z"
+                        stroke="#C0B281"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></path>
+                      <path
+                        d="M10.5 13.5H4.5V19.5H10.5V13.5Z"
+                        stroke="#C0B281"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></path>
+                      <path
+                        d="M19.5 13.5H13.5V19.5H19.5V13.5Z"
+                        stroke="#C0B281"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      ></path>
+                    </svg>
+                    View 48 Photos
+                  </button>
+                </div>
+
+                <div class="gallery-preview-wrapper">
+                  <div
+                    class="pos-r gallery-preview-image gallery-preview-image-0 p-a-1"
+                  >
+                    <div
+                      style="
+                        background-position: 50%;
+                        background-image: url(https://s3.amazonaws.com/fse1.relahq.com/public/styles/kb_full/s3/property-images/prop-nid-83661131/adobestock_297044418.jpeg);
+                      "
+                      class="bg-image pos-r"
+                    >
+                      <div class="gallery-cta-inner">
+                        <button
+                          aria-label="View photo gallery"
+                          data="ps-open"
+                          data-ps-url="https://s3.amazonaws.com/fse1.relahq.com/public/styles/kb_full/s3/property-images/prop-nid-83661131/adobestock_297044418.jpeg"
+                          class="content"
+                          data-pid="2"
+                        ></button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="pos-r gallery-preview-image gallery-preview-image-1 p-a-1"
+                  >
+                    <div
+                      style="
+                        background-position: 50%;
+                        background-image: url(https://s3.amazonaws.com/fse1.relahq.com/public/styles/kb_full/s3/property-images/prop-nid-83661131/light_int_adobestock_451880774.jpeg);
+                      "
+                      class="bg-image pos-r"
+                    >
+                      <div class="gallery-cta-inner">
+                        <button
+                          aria-label="View photo gallery"
+                          data="ps-open"
+                          data-ps-url="https://s3.amazonaws.com/fse1.relahq.com/public/styles/kb_full/s3/property-images/prop-nid-83661131/light_int_adobestock_451880774.jpeg"
+                          class="content"
+                          data-pid="3"
+                        ></button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="pos-r gallery-preview-image gallery-preview-image-2 p-a-1"
+                  >
+                    <div
+                      style="
+                        background-position: 50%;
+                        background-image: url(https://s3.amazonaws.com/fse1.relahq.com/public/styles/kb_full/s3/property-images/prop-nid-83661131/adobestock_343381345.jpeg);
+                      "
+                      class="bg-image pos-r"
+                    >
+                      <div class="gallery-cta-inner">
+                        <button
+                          aria-label="View photo gallery"
+                          data="ps-open"
+                          data-ps-url="https://s3.amazonaws.com/fse1.relahq.com/public/styles/kb_full/s3/property-images/prop-nid-83661131/adobestock_343381345.jpeg"
+                          class="content"
+                          data-pid="36"
+                        ></button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="pos-r gallery-preview-image gallery-preview-image-3 p-a-1"
+                  >
+                    <div
+                      style="
+                        background-position: 50%;
+                        background-image: url(https://s3.amazonaws.com/fse1.relahq.com/public/styles/kb_full/s3/property-images/prop-nid-83661131/pexels-saviesa-home-2089698.jpg);
+                      "
+                      class="bg-image pos-r"
+                    >
+                      <div class="gallery-cta-inner">
+                        <button
+                          aria-label="View photo gallery"
+                          data="ps-open"
+                          data-ps-url="https://s3.amazonaws.com/fse1.relahq.com/public/styles/kb_full/s3/property-images/prop-nid-83661131/pexels-saviesa-home-2089698.jpg"
+                          class="content"
+                          data-pid="1"
+                        ></button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="pos-r gallery-preview-image gallery-preview-image-4 p-a-1"
+                  >
+                    <div
+                      style="
+                        background-position: 50%;
+                        background-image: url(https://s3.amazonaws.com/fse1.relahq.com/public/styles/kb_full/s3/property-images/prop-nid-83661131/gray-wooden-ladder-on-white-painted-wall-1125136.jpg);
+                      "
+                      class="bg-image pos-r"
+                    >
+                      <div class="gallery-cta-inner">
+                        <button
+                          aria-label="View photo gallery"
+                          data="ps-open"
+                          data-ps-url="https://s3.amazonaws.com/fse1.relahq.com/public/styles/kb_full/s3/property-images/prop-nid-83661131/gray-wooden-ladder-on-white-painted-wall-1125136.jpg"
+                          class="content"
+                          data-pid="33"
+                        ></button>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="pos-r gallery-preview-image gallery-preview-image-5 p-a-1"
+                  >
+                    <div
+                      style="
+                        background-position: 50%;
+                        background-image: url(https://s3.amazonaws.com/fse1.relahq.com/public/styles/kb_full/s3/property-images/prop-nid-83661131/adobestock_375232166.jpeg);
+                      "
+                      class="bg-image pos-r"
+                    >
+                      <div class="gallery-cta-inner">
+                        <button
+                          aria-label="View photo gallery"
+                          data="ps-open"
+                          data-ps-url="https://s3.amazonaws.com/fse1.relahq.com/public/styles/kb_full/s3/property-images/prop-nid-83661131/adobestock_375232166.jpeg"
+                          class="content"
+                          data-pid="27"
+                        ></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="dots-photos-bottom" class="bg-dots"></div>
+            </div>
+          </div>
+
+          <div id="showcase" class="section d-block pos-r">
+            <div class="inner container">
+              <div
+                id="dots-showcase"
+                class="bg-dots hidden-xs hidden-sm move"
+              ></div>
+              <div class="cut"></div>
+              <div
+                class="col-xs-12 col-md-3 pull-right showcase-tabs-wrapper text-center"
+              >
+                <h2 class="section-title text-right">Media</h2>
+                <div
+                  id="arrow-showcase"
+                  class="arrow-mask-wrap arrow-mask-left affix-top"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 94.33 17.9"
+                  >
+                    <defs>
+                      <style>
+                        .cls-1 {
+                          fill: #fff;
+                          stroke: #231f20;
+                          stroke-miterlimit: 10;
+                        }
+                      </style>
+                    </defs>
+                    <g id="Layer_2" data-name="Layer 2">
+                      <g id="Layer_1-2" data-name="Layer 1">
+                        <polyline
+                          class="cls-1"
+                          points="9.74 17.54 0.72 9.34 9.74 0.35"
+                        ></polyline>
+                        <line
+                          class="cls-1"
+                          x1="0.73"
+                          y1="9.34"
+                          x2="94.33"
+                          y2="9.34"
+                        ></line>
+                      </g>
+                    </g>
+                  </svg>
+                </div>
+                <div class="showcase-tabs pos-r pull-right">
+                  <a
+                    tabindex="0"
+                    role="button"
+                    tab-data="showcase-videos"
+                    class="showcase-tab showCaseTabInit-processed"
+                  >
+                    <i
+                      class="fa fa-chevron-left indicator hidden-xs hidden-sm"
+                    ></i>
+                    <span class="hidden-xs hidden-sm">Video</span>
+                    <div
+                      class="circle-icon hidden-md hidden-lg"
+                      aria-label="Video"
+                    >
+                      <svg
+                        id="play_icon"
+                        enable-background="new 0 0 189.524 189.524"
+                        viewBox="0 0 189.524 189.524"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <g>
+                          <g>
+                            <path
+                              clip-rule="evenodd"
+                              d="m94.762 180.048c47.102 0 85.286-38.183 85.286-85.286 0-47.102-38.183-85.286-85.286-85.286-47.102 0-85.286 38.184-85.286 85.286s38.184 85.286 85.286 85.286zm0 9.476c52.335 0 94.762-42.427 94.762-94.762 0-52.336-42.427-94.762-94.762-94.762-52.336 0-94.762 42.426-94.762 94.762 0 52.335 42.426 94.762 94.762 94.762z"
+                              fill-rule="evenodd"
+                            ></path>
+                          </g>
+                          <g>
+                            <path
+                              clip-rule="evenodd"
+                              d="m119.386 94.762-43.577-29.051v58.103zm8.804-5.519c3.939 2.626 3.939 8.413 0 11.039l-51.545 34.364c-4.408 2.939-10.313-.222-10.313-5.52v-68.727c0-5.298 5.905-8.458 10.313-5.519z"
+                              fill-rule="evenodd"
+                            ></path>
+                          </g>
+                        </g>
+                      </svg>
+                    </div>
+                  </a>
+
+                  <a
+                    tabindex="0"
+                    role="button"
+                    tab-data="showcase-vtour"
+                    class="showcase-tab resize-content active"
+                  >
+                    <i
+                      class="fa fa-chevron-left indicator hidden-xs hidden-sm"
+                    ></i>
+                    <span class="hidden-xs hidden-sm">3D Tour</span>
+                    <div
+                      class="circle-icon hidden-md hidden-lg"
+                      aria-label="3D Tour"
+                    >
+                      <svg
+                        viewBox="0 -13 511.99989 511"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="m352 346.496094c-5.523438 0-10 4.480468-10 10 0 5.519531 4.476562 10 10 10 5.519531 0 10-4.480469 10-10 0-5.519532-4.480469-10-10-10zm0 0"
+                        ></path>
+                        <path
+                          d="m266 170.5c0-5.523438-4.480469-10-10-10s-10 4.476562-10 10c0 5.519531 4.480469 10 10 10s10-4.480469 10-10zm0 0"
+                        ></path>
+                        <path
+                          d="m160 366.496094c5.519531 0 10-4.480469 10-10 0-5.519532-4.480469-10-10-10s-10 4.480468-10 10c0 5.519531 4.480469 10 10 10zm0 0"
+                        ></path>
+                        <path
+                          d="m506.058594 414.015625-54.0625-24.019531v-219.496094c0-3.960938-2.371094-7.628906-6.140625-9.230469l-179.855469-77.355469v-73.414062c0-5.523438-4.480469-10-10-10-5.523438 0-10 4.476562-10 10v73.414062l-179.855469 77.355469c-3.574219 1.484375-6.140625 5.105469-6.140625 9.230469v219.496094l-54.0625 24.019531c-5.046875 2.246094-7.320312 8.152344-5.078125 13.199219 2.226563 5.015625 8.117188 7.335937 13.199219 5.078125l56.003906-24.882813 181.984375 78.269532c2.40625 1.035156 5.347657 1.097656 7.902344 0l181.980469-78.269532 56.003906 24.882813c5.101562 2.265625 10.980469-.082031 13.199219-5.078125 2.242187-5.046875-.03125-10.953125-5.078125-13.199219zm-260.058594-308.328125v24.8125c0 5.519531 4.476562 10 10 10 5.519531 0 10-4.480469 10-10v-24.8125l150.6875 64.8125-160.6875 69.113281-160.6875-69.113281zm-113.410156 262.996094c-2.246094-5.046875-8.15625-7.316406-13.199219-5.078125l-39.390625 17.503906v-195.425781l166 71.398437v204.226563l-151.035156-64.960938 32.546875-14.460937c5.046875-2.246094 7.320312-8.15625 5.078125-13.203125zm133.410156 92.625v-204.226563l165.996094-71.398437v195.425781l-39.386719-17.5c-5.050781-2.242187-10.957031.027344-13.199219 5.078125-2.242187 5.046875.03125 10.953125 5.078125 13.199219l32.546875 14.460937zm0 0"
+                        ></path>
+                      </svg>
+                    </div>
+                  </a>
+
+                  <a
+                    tabindex="0"
+                    role="button"
+                    tab-data="showcase-hotspot-floorplans"
+                    class="showcase-tab"
+                  >
+                    <i
+                      class="fa fa-chevron-left indicator hidden-xs hidden-sm"
+                    ></i>
+                    <span class="hidden-xs hidden-sm">Floor Plans</span>
+                    <div
+                      class="circle-icon hidden-md hidden-lg"
+                      arial-label="Floor Plans"
+                    >
+                      <!--?xml version="1.0" encoding="iso-8859-1"?-->
+                      <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+                      <svg
+                        version="1.1"
+                        id="floorplan_icon"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        x="0px"
+                        y="0px"
+                        viewBox="0 0 512 512"
+                        style="enable-background: new 0 0 512 512"
+                        xml:space="preserve"
+                      >
+                        <g>
+                          <g>
+                            <g>
+                              <path
+                                d="M501.333,21.333H10.667C4.779,21.333,0,26.112,0,32v277.333C0,315.221,4.779,320,10.667,320h170.667
+				c5.888,0,10.667-4.779,10.667-10.667v-42.667c0-5.888-4.779-10.667-10.667-10.667s-10.667,4.779-10.667,10.667v32H21.333V181.333
+				V42.667h149.333V48c0,5.888,4.779,10.667,10.667,10.667S192,53.888,192,48v-5.333h298.667v128H288
+				c-5.888,0-10.667,4.779-10.667,10.667V224c0,5.888,4.779,10.667,10.667,10.667s10.667-4.779,10.667-10.667v-32h192v170.667H352
+				c-5.888,0-10.667,4.779-10.667,10.667v96h-320v-32c0-5.888-4.779-10.667-10.667-10.667S0,431.445,0,437.333V480
+				c0,5.888,4.779,10.667,10.667,10.667H352c5.888,0,10.667-4.779,10.667-10.667v-96h138.667c5.888,0,10.667-4.779,10.667-10.667V32
+				C512,26.112,507.221,21.333,501.333,21.333z"
+                              ></path>
+                              <path
+                                d="M181.333,132.267c5.888,0,10.667-4.757,10.667-10.667V97.067c0-5.888-4.779-10.667-10.667-10.667
+				s-10.667,4.757-10.667,10.667V121.6C170.667,127.509,175.445,132.267,181.333,132.267z"
+                              ></path>
+                              <path
+                                d="M160,170.667c-5.888,0-10.667,4.779-10.667,10.667S154.112,192,160,192h21.333c5.888,0,10.667-4.779,10.667-10.667
+				v-10.667c0-5.888-4.779-10.667-10.667-10.667s-10.667,4.779-10.667,10.667H160z"
+                              ></path>
+                              <path
+                                d="M96,170.667c-5.888,0-10.667,4.779-10.667,10.667S90.112,192,96,192h21.333c5.888,0,10.667-4.779,10.667-10.667
+				s-4.779-10.667-10.667-10.667H96z"
+                              ></path>
+                              <path
+                                d="M32,192h21.333C59.221,192,64,187.221,64,181.333s-4.779-10.667-10.667-10.667H32c-5.888,0-10.667,4.779-10.667,10.667
+				S26.112,192,32,192z"
+                              ></path>
+                            </g>
+                          </g>
+                        </g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                        <g></g>
+                      </svg>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="col-xs-12 col-md-8 pos-r plyr-black">
+                <div
+                  id="showcase-videos"
+                  class="showcase-content pos-r showCaseTabInit-processed"
+                >
+                  <div
+                    class="showcase-section"
+                    data-scroll-offset="200"
+                    id="videos"
+                  >
+                    <div
+                      class="view view-videos view-id-videos view-display-id-plyr_gallery_player view-dom-id-67863a9c259077cdf8bfcfdd5cf39b0f jquery-once-2-processed refresh-processed"
+                    >
+                      <div class="view-content">
+                        <div
+                          class="views-row-odd views-row-first views-row-last"
+                        >
+                          <div
+                            class="views-field views-field-field-property-video-url"
+                          >
+                            <div class="field-content">
+                              <div
+                                tabindex="0"
+                                class="plyr plyr--full-ui plyr--video plyr--vimeo plyr--fullscreen-enabled"
+                              >
+                                <div
+                                  class="plyr__video-wrapper plyr__video-embed"
+                                >
+                                  <div
+                                    id="plyr-gallery"
+                                    data-plyr-embed-id="427069434"
+                                    data-vimeo-privacy-key=""
+                                    class="video-plyr-processed"
+                                  ></div>
+                                  <div class="plyr__poster"></div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="showcase-vtour" class="showcase-content pos-r active">
+                  <div
+                    id="vtour"
+                    data-scroll-offset="200"
+                    class="showcase-section"
+                  >
+                    <div class="owl-container">
+                      <div
+                        id="vtour-embed-wrapper"
+                        class="overlay-sixteen-nine"
+                      >
+                        <div class="aspect-ratio-content">
+                          <iframe
+                            title="3D Virtual Tour"
+                            scrolling="no"
+                            id="frame-vtour"
+                            data-vtour-url="https://my.matterport.com/show/?m=aSx1MpRRqif"
+                            class="vtour-frame vtour-nid-83661581 vtour-loaded-processed"
+                            width="100%"
+                            height="100%"
+                            src="./assets/saved_resource.html"
+                            frameborder="0"
+                            allowfullscreen=""
+                          ></iframe>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  id="showcase-hotspot-floorplans"
+                  class="showcase-content pos-r"
+                >
+                  <div
+                    class="showcase-section p-x-0"
+                    data-scroll-offset="160"
+                    id="hotspot-floorplans"
+                  >
+                    <div class="rela-standard-tabs rela-full-tabs">
+                      <ul
+                        id="tabs-hotspot-flooplans"
+                        class="text-center tabs-wrapper"
+                      >
+                        <li class="tab active-tab-parent first">
+                          <a class="active-tab">Floor 1</a>
+                        </li>
+                        <li class="tab last">
+                          <a class="">Floor 2</a>
+                        </li>
+                      </ul>
+                      <div class="tab-content-wrapper">
+                        <div
+                          id="83661756-tab"
+                          class="83661756-tab-content tab-content tab-content-active"
+                          style="display: none"
+                        >
+                          <div
+                            id="floorplan-83661756"
+                            class="pos-r floorplan-hotspot hotspot-viewer zoom-active"
+                            data-nid="83661756"
+                          >
+                            <div
+                              class="hotspot-map-wrapper col-xs-12 no-gutter center-block"
+                            >
+                              <div class="hotspot-container zoomable-1">
+                                <div
+                                  class="field-name-field-doc-file jquery-once-1-processed"
+                                >
+                                  <img
+                                    class="floorplan-image"
+                                    src="./assets/floor-1.png"
+                                  />
+                                </div>
+                              </div>
+                            </div>
+
+                            <div
+                              class="easyzoom easyzoom--overlay jquery-once-1-processed is-ready"
+                            >
+                              <a href="./assets/floor-1.png">
+                                <img
+                                  src="./assets/floor-1.png"
+                                  alt="Floorplan for 567 Kit Lane"
+                                />
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          id="83661761-tab"
+                          class="83661761-tab-content tab-content"
+                          style="display: none"
+                        >
+                          <div
+                            id="floorplan-83661761"
+                            class="pos-r floorplan-hotspot hotspot-viewer"
+                            data-nid="83661761"
+                          >
+                            <div
+                              class="hotspot-map-wrapper col-xs-12 no-gutter center-block"
+                            >
+                              <div class="hotspot-container zoomable-1">
+                                <div
+                                  class="field-name-field-doc-file jquery-once-1-processed"
+                                >
+                                  <img
+                                    class="floorplan-image"
+                                    src="./assets/floor-2.png"
+                                  />
+                                </div>
+                              </div>
+                            </div>
+
+                            <div
+                              class="easyzoom easyzoom--overlay jquery-once-1-processed"
+                            >
+                              <a href="./assets/floor-2.png">
+                                <img
+                                  src="./assets/floor-2.png"
+                                  alt="Floorplan for 567 Kit Lane"
+                                />
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End showcase -->
+
+          <div
+            id="map"
+            class="section full-width d-block m-t-2 njmls-hide pos-r"
+          >
+            <div class="container">
+              <div class="col-xs-12 col-md-5">
+                <div
+                  id="arrow-location"
+                  class="arrow-mask-wrap arrow-mask-right affix-top"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 94.33 17.9"
+                  >
+                    <defs>
+                      <style>
+                        .cls-1 {
+                          fill: #fff;
+                          stroke: #231f20;
+                          stroke-miterlimit: 10;
+                        }
+                      </style>
+                    </defs>
+                    <g
+                      id="arrow-right-long"
+                      data-name="arrow-right-long-Layer 2"
+                    >
+                      <g
+                        id="arrow-right-long-Layer_1-2"
+                        data-name="arrow-right-long-Layer 1"
+                      >
+                        <polyline
+                          class="cls-1"
+                          points="84.59 0.37 93.6 8.57 84.59 17.55"
+                        ></polyline>
+                        <line
+                          class="cls-1"
+                          x1="93.6"
+                          y1="8.57"
+                          y2="8.57"
+                        ></line>
+                      </g>
+                    </g>
+                  </svg>
+                </div>
+                <h2 class="section-title m-b-3">Location</h2>
+                <div class="location-description"></div>
+                <div class="map-address">
+                  <div class="property-address-top">
+                    <span class="thoroughfare">567 Kit Lane</span>
+                  </div>
+                  <div class="property-address-bottom">
+                    <span class="locality">Anywhere</span>,
+                    <span class="administrative_area">CA</span>
+                    <span class="postal_code">92654</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-12 col-md-7">
+                <div class="full-width pull-right property-map">
+                  <div
+                    class="field field-name-field-property-map field-type-geofield field-label-hidden"
+                  >
+                    <div class="field-items">
+                      <div class="field-item even">
+                        <div
+                          style="
+                            width: 100%;
+                            height: 400px;
+                            position: relative;
+                            overflow: hidden;
+                          "
+                          id="styled-google-map-64a2293a89f95"
+                          class="processed"
+                        >
+                          <div
+                            style="
+                              height: 100%;
+                              width: 100%;
+                              position: absolute;
+                              top: 0px;
+                              left: 0px;
+                              background-color: rgb(229, 227, 223);
+                            "
+                          ></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            id="contact"
+            class="section mls-hide pos-r property-contacts-2 max-width-1400 p-x-2 full-width d-block center-block m-y-2"
+          >
+            <div id="cut-contact" class="cut"></div>
+            <div class="card-wrapper container">
+              <div class="logo-title-wrap">
+                <h2 class="section-title pull-left col-xs-12 col-md-6">
+                  Presented By
+                </h2>
+
+                <div class="contact-logo col-xs-12 col-md-6 pull-right">
+                  <img
+                    class="logo-image aspect-wide"
+                    height="63"
+                    width="264"
+                    alt="Logo"
+                    src="./assets/realty-co.png"
+                  />
+                </div>
+              </div>
+
+              <div class="full-width">
+                <div
+                  class="view view-agent-cards-property-old view-id-agent_cards_property_old view-display-id-embed_card_3 view-agent-cards-property view-dom-id-c779731b1513f6bc1e96911d10376460"
+                >
+                  <div class="view-content">
+                    <div
+                      class="views-row views-row-1 views-row-odd views-row-first"
+                    >
+                      <div
+                        id="node-2446"
+                        class="node node-agent-card clearfix card_3"
+                      >
+                        <div class="content">
+                          <div class="group-contact-3-left field-group-div">
+                            <div
+                              class="field field-name-field-user-headshot field-type-image field-label-hidden"
+                            >
+                              <div class="field-items">
+                                <div class="field-item even">
+                                  <img
+                                    src="./assets/girl-azrfed.jpg"
+                                    width="300"
+                                    height="300"
+                                    alt=""
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="group-contact-3-right field-group-div">
+                            <div
+                              class="field field-name-field-agent-name field-type-text field-label-hidden"
+                            >
+                              <div class="field-items">
+                                <div class="field-item even">
+                                  <div class="agent-card-name h4">
+                                    Jayne Smith
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="field field-name-field-user-company field-type-text field-label-hidden"
+                            >
+                              <div class="field-items">
+                                <div class="field-item even">TopRealty</div>
+                              </div>
+                            </div>
+                            <div
+                              class="field field-name-field-user-phone field-type-text field-label-hidden"
+                            >
+                              <div class="field-items">
+                                <div class="field-item even">
+                                  (949) 555-6666
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="field field-name-field-agent-email field-type-email field-label-hidden"
+                            >
+                              <div class="field-items">
+                                <div class="field-item even">
+                                  <a href="mailto:jayne@example.com"
+                                    >jayne@example.com</a
+                                  >
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="field field-name-field-agent-bre field-type-text field-label-hidden"
+                            >
+                              <div class="field-items">
+                                <div class="field-item even">CalRE# 123456</div>
+                              </div>
+                            </div>
+                            <div class="group-contact-links field-group-div">
+                              <div
+                                class="field field-name-field-card-social-media field-type-social-links-field field-label-inline clearfix"
+                              >
+                                <div class="field-label">Social&nbsp;</div>
+                                <div class="field-items">
+                                  <div class="field-item even">
+                                    <div
+                                      class="field field-name-field-card-social-media field-type-social-links-field social-links"
+                                    >
+                                      <ul class="field-items">
+                                        <li
+                                          class="field-item service-facebook first last"
+                                        >
+                                          <a
+                                            target="_blank"
+                                            aria-label="facebook"
+                                            ><i class="icon fa-facebook fa"></i
+                                          ></a>
+                                        </li>
+                                      </ul>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <span class="divide">|</span>
+                              <div
+                                class="field field-name-field-agent-website field-type-link-field field-label-hidden"
+                              >
+                                <div class="field-items">
+                                  <div class="field-item even">
+                                    <a target="_blank">Website</a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="views-row views-row-2 views-row-even views-row-last"
+                    >
+                      <div
+                        id="node-2471"
+                        class="node node-agent-card clearfix card_3"
+                      >
+                        <div class="content">
+                          <div class="group-contact-3-left field-group-div">
+                            <div
+                              class="field field-name-field-user-headshot field-type-image field-label-hidden"
+                            >
+                              <div class="field-items">
+                                <div class="field-item even">
+                                  <img
+                                    src="./assets/guy3.jpg"
+                                    width="300"
+                                    height="300"
+                                    alt=""
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="group-contact-3-right field-group-div">
+                            <div
+                              class="field field-name-field-agent-name field-type-text field-label-hidden"
+                            >
+                              <div class="field-items">
+                                <div class="field-item even">
+                                  <div class="agent-card-name h4">
+                                    John Doezen
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="field field-name-field-user-company field-type-text field-label-hidden"
+                            >
+                              <div class="field-items">
+                                <div class="field-item even">SellCo</div>
+                              </div>
+                            </div>
+                            <div
+                              class="field field-name-field-user-phone field-type-text field-label-hidden"
+                            >
+                              <div class="field-items">
+                                <div class="field-item even">
+                                  (949) 949-9499
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="field field-name-field-agent-email field-type-email field-label-hidden"
+                            >
+                              <div class="field-items">
+                                <div class="field-item even">
+                                  <a href="mailto:john@example.com"
+                                    >john@example.com</a
+                                  >
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="field field-name-field-agent-bre field-type-text field-label-hidden"
+                            >
+                              <div class="field-items">
+                                <div class="field-item even">DRE: 123456</div>
+                              </div>
+                            </div>
+                            <div class="group-contact-links field-group-div">
+                              <div
+                                class="field field-name-field-agent-website field-type-link-field field-label-hidden"
+                              >
+                                <div class="field-items">
+                                  <div class="field-item even">
+                                    <a target="_blank">Website</a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            id="contact-bottom"
+            class="contact-form-wrapper pos-r full-width mls-hide"
+          >
+            <div class="max-width-700 center-block">
+              <h2 class="section-title full-width text-center m-b-3">
+                Get in touch
+              </h2>
+
+              <div id="buyer_lead_node_form_wrapper">
+                <form
+                  class="node-form node-buyer_lead-form"
+                  method="post"
+                  id="property-lead-form"
+                  accept-charset="UTF-8"
+                >
+                  <div>
+                    <input type="hidden" name="changed" value="" />
+                    <input
+                      type="hidden"
+                      name="form_build_id"
+                      value="form-rk8vlShsCULpKBpNSjnOFB-285xQ5nSUoweRWykkkbc"
+                    />
+                    <input
+                      type="hidden"
+                      name="form_id"
+                      value="property_lead_form"
+                    />
+                    <div
+                      class="field-type-text field-name-field-lead-first-name field-widget-text-textfield form-wrapper form-group"
+                      id="edit-field-lead-first-name--2"
+                    >
+                      <div
+                        class="form-type-textfield form-item-field-lead-first-name-und-0-value form-item form-group"
+                      >
+                        <label for="edit-field-lead-first-name-und-0-value--2"
+                          >First Name
+                          <span
+                            class="form-required"
+                            title="This field is required."
+                            >*</span
+                          ></label
+                        >
+                        <input
+                          class="text-full form-control form-text required"
+                          placeholder="First*"
+                          type="text"
+                          id="edit-field-lead-first-name-und-0-value--2"
+                          name="field_lead_first_name[und][0][value]"
+                          value=""
+                          size="60"
+                          maxlength="255"
+                        />
+                      </div>
+                    </div>
+                    <div
+                      class="field-type-text field-name-field-lead-last-name field-widget-text-textfield form-wrapper form-group"
+                      id="edit-field-lead-last-name--2"
+                    >
+                      <div
+                        class="form-type-textfield form-item-field-lead-last-name-und-0-value form-item form-group"
+                      >
+                        <label for="edit-field-lead-last-name-und-0-value--2"
+                          >Last Name
+                          <span
+                            class="form-required"
+                            title="This field is required."
+                            >*</span
+                          ></label
+                        >
+                        <input
+                          class="text-full form-control form-text required"
+                          placeholder="Last*"
+                          type="text"
+                          id="edit-field-lead-last-name-und-0-value--2"
+                          name="field_lead_last_name[und][0][value]"
+                          value=""
+                          size="60"
+                          maxlength="255"
+                        />
+                      </div>
+                    </div>
+                    <div
+                      class="field-type-email field-name-field-lead-email field-widget-email-textfield form-wrapper form-group"
+                      id="edit-field-lead-email--2"
+                    >
+                      <div class="text-full-wrapper">
+                        <div
+                          class="form-type-textfield form-item-field-lead-email-und-0-email form-item form-group"
+                        >
+                          <label for="edit-field-lead-email-und-0-email--2"
+                            >Email
+                            <span
+                              class="form-required"
+                              title="This field is required."
+                              >*</span
+                            ></label
+                          >
+                          <input
+                            placeholder="Email*"
+                            class="form-control form-text required"
+                            type="text"
+                            id="edit-field-lead-email-und-0-email--2"
+                            name="field_lead_email[und][0][email]"
+                            value=""
+                            size="60"
+                            maxlength="128"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="field-type-text field-name-field-lead-phone field-widget-text-textfield form-wrapper form-group"
+                      id="edit-field-lead-phone--2"
+                    >
+                      <div
+                        class="form-type-textfield form-item-field-lead-phone-und-0-value form-item form-group"
+                      >
+                        <label for="edit-field-lead-phone-und-0-value--2"
+                          >Phone
+                          <span
+                            class="form-required"
+                            title="This field is required."
+                            >*</span
+                          ></label
+                        >
+                        <input
+                          class="text-full clear-text form-control form-text required processed grey-text"
+                          placeholder="Phone #"
+                          type="text"
+                          id="edit-field-lead-phone-und-0-value--2"
+                          name="field_lead_phone[und][0][value]"
+                          value=""
+                          size="60"
+                          maxlength="255"
+                        />
+                      </div>
+                    </div>
+                    <div
+                      class="field-type-text-long field-name-field-lead-comment field-widget-text-textarea form-wrapper form-group"
+                      id="edit-field-lead-comment"
+                    >
+                      <div
+                        class="form-type-textarea form-item-field-lead-comment-und-0-value form-item form-group"
+                      >
+                        <label for="edit-field-lead-comment-und-0-value"
+                          >Comment
+                          <span
+                            class="form-required"
+                            title="This field is required."
+                            >*</span
+                          ></label
+                        >
+                        <div
+                          class="form-textarea-wrapper resizable textarea-processed resizable-textarea"
+                        >
+                          <textarea
+                            class="text-full form-control form-textarea required"
+                            placeholder="Your Message"
+                            id="edit-field-lead-comment-und-0-value"
+                            name="field_lead_comment[und][0][value]"
+                            cols="60"
+                            rows="5"
+                          ></textarea>
+                          <div class="grippie"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="form-actions form-wrapper form-group"
+                      id="edit-actions--2"
+                    >
+                      <button
+                        class="btn btn-default form-submit ajax-processed"
+                        id="edit-submit"
+                        name="op"
+                        value="Send Inquiry"
+                        type="submit"
+                        style="color: rgb(0, 0, 0)"
+                      >
+                        Send Inquiry
+                      </button>
+                      <a
+                        class="book-showing-form-cta form-submit btn btn-default pull-right use-ajax ajax-processed"
+                        rel="nofollow"
+                        style="color: rgb(0, 0, 0)"
+                        >Schedule a Tour</a
+                      >
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <div
+            id="bottom"
+            class="full-width pull-left d-inline-block pos-r njmls-hide"
+          >
+            <div class="cut"></div>
+            <div class="inner p-t-2 pos-r container font-serif">
+              <div class="address-logo-wrap">
+                <div class="col-xs-12 col-md-6">
+                  <div class="property-address-top">
+                    <span class="thoroughfare">567 Kit Lane</span>
+                  </div>
+                  <div class="property-address-bottom">
+                    <span class="locality">Anywhere</span>,
+                    <span class="administrative_area">CA</span>
+                    <span class="postal_code">92654</span>
+                  </div>
+                </div>
+
+                <div class="col-xs-12 col-md-6">
+                  <span
+                    class="logo pos-r logo-extra mls-hide img-responsive-parent"
+                  >
+                    <div class="aspect-wide">
+                      <div
+                        class="field field-name-field-logo field-type-image field-label-hidden"
+                      >
+                        <div class="field-items">
+                          <div class="field-item even">
+                            <img
+                              src="./assets/realty-co.png"
+                              width="264"
+                              height="63"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </span>
+                </div>
+              </div>
+              <a class="rela-attribution-link mls-hide"
+                >Powered by
+                <img alt="Rela Logo" src="./assets/rela-logo-tiny.png" />
+                Rela</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
