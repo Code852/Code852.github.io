@@ -1,0 +1,404 @@
+(function($, Drupal, PhotoSwipe, PhotoSwipeUI_Default) {
+  Drupal.behaviors.photoswipe = {
+    /**
+     * PhotoSwipe Options, coming from Drupal.settings.
+     */
+    photoSwipeOptions: {},
+    /**
+     * Instantiated galleries.
+     */
+    galleries: [],
+    /**
+     * Load PhotoSwipe once page is ready
+     */
+    attach: function(context, settings) {
+      // Send to GA.
+      function psSendToGA(category, action, label, value) {
+        if (typeof ga != 'undefined') {
+          if (label === undefined) {
+            label = 0;
+          }
+
+
+          if (value === undefined) {
+            value = 0;
+          }
+
+          ga('send', {
+            'hitType': 'event',
+            'eventCategory': category,
+            'eventAction': action,
+            'eventLabel': label,
+            'eventValue': value
+          });
+        }
+      }
+
+      this.photoSwipeOptions = settings.photoswipe ? settings.photoswipe.options : {};
+
+      var images = [];
+      if (settings.RelaProperty !== undefined) {
+        if (settings.RelaProperty.DLRestricted == true) {
+          $('body').addClass('nodl');
+        }
+        else {
+         $('body').removeClass('nodl');
+        }
+
+        PSImages = settings.RelaProperty.imageListPS;
+        Object.keys(PSImages).forEach(function(key) {
+          image = {};
+
+          image['src'] = PSImages[key]['url'];
+          image['w'] = PSImages[key]['w'];
+          image['h'] = PSImages[key]['h'];
+          image['title'] = PSImages[key]['title'];
+          image['pid'] = PSImages[key]['pid'];
+          image['property'] = PSImages[key]['property'];
+          images.push(image);
+        });
+      }
+
+      var floorplans = [];
+      if (settings.RelaPropertyFloorplan !== undefined) {
+        PSFloorplans = settings.RelaPropertyFloorplan.floorplanListPS;
+
+        if (settings.RelaPropertyFloorplan.DLRestricted == true) {
+          $('body').addClass('nodl');
+        }
+        else {
+          $('body').removeClass('nodl');
+        }
+
+        Object.keys(PSFloorplans).forEach(function(key) {
+          image = {};
+
+          image['src'] = PSFloorplans[key]['url'];
+          image['w'] = PSFloorplans[key]['w'];
+          image['h'] = PSFloorplans[key]['h'];
+          image['title'] = PSFloorplans[key]['title'];
+          image['pid'] = PSFloorplans[key]['pid'];
+          image['property'] = PSFloorplans[key]['property'];
+          floorplans.push(image);
+        });
+      }
+
+      if (!images.length && !floorplans.length) {
+        return;
+      }
+
+      // define options (if needed)
+      var options = {
+        index: 0,
+        bgOpacity: 1,
+        closeOnScroll: false,
+        clickToCloseNonZoomable: false,
+        tapToClose: false,
+        closeElClasses: [],
+        galleryPIDs: true,
+        shareEl: false,
+      };
+
+      var ssRunning = false,
+        ssOnce = false,
+        ssDelay = 4500 /*ms*/ ,
+        ssButtonClass = '.pswp-custom-button--playpause';
+
+      var gallery = null;
+      // Initializes and opens PhotoSwipe
+      $('[data="ps-open"]', context).click(function() {
+        var pswpElement = document.querySelectorAll('.pswp')[0];
+
+        options['index'] = 0;
+        var pid = $(this).attr('data-pid');
+        if (pid !== undefined) {
+          options['index'] = parseInt(pid);
+        }
+
+        var content = images;
+
+        if ($(this).hasClass('floorplan-gallery-link')) {
+          content = floorplans;
+        }
+
+        gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, content, options);
+
+        /* not running from the start */
+        setSlideshowState(ssButtonClass, false);
+        // start timer for the next slide in slideshow after prior image has loaded
+
+        gallery.init();
+
+        $(pswpElement).data('pswp', gallery);
+
+        psSendToGA('Images', gallery.currItem.property, gallery.currItem.pid, 0);
+        gallery.listen('afterChange', function() {
+          if (ssRunning && ssOnce) {
+            ssOnce = false;
+            setTimeout(gotoNextSlide, ssDelay);
+          }
+          psSendToGA('Images', gallery.currItem.property, gallery.currItem.pid, 0);
+        });
+
+        Drupal.settings.RelaProperty.currentPSgallery = gallery;
+        gallery.listen('close', function() {
+          $('body').removeClass('ps-grid-open');
+          $('#pspw-gallery-thumbs').hide();
+          if ($('#gallery-thumbs-ph').length > 0) {
+            $('#gallery-thumbs-ph').hide();
+          }
+        });
+        return false;
+      })
+
+      $('div[data="ps-open"]', context).click(function() {
+        var pswpElement = document.querySelectorAll('.pswp')[0];
+
+        options['index'] = 0;
+        var pid = $(this).attr('data-pid');
+        if (pid !== undefined) {
+          options['index'] = parseInt(pid);
+        }
+
+        gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, images, options);
+
+        /* not running from the start */
+        setSlideshowState(ssButtonClass, false );
+        // start timer for the next slide in slideshow after prior image has loaded
+
+        gallery.init();
+
+        $(pswpElement).data('pswp', gallery);
+
+        psSendToGA('Images', gallery.currItem.property, gallery.currItem.pid, 0);
+        gallery.listen('afterChange', function() {
+          if (ssRunning && ssOnce) {
+            ssOnce = false;
+            setTimeout(gotoNextSlide, ssDelay);
+          }
+          psSendToGA('Images', gallery.currItem.property, gallery.currItem.pid, 0);
+        });
+        Drupal.settings.RelaProperty.currentPSgallery = gallery;
+
+        gallery.listen('close', function() {
+          $('body').removeClass('ps-grid-open');
+          $('#pspw-gallery-thumbs').hide();
+          if ($('#gallery-thumbs-ph').length > 0) {
+            $('#gallery-thumbs-ph').hide();
+          }
+        });
+
+        return false;
+      })
+
+      /* slideshow management */
+      $(ssButtonClass, context).on('click tap', function(e) {
+        // toggle slideshow on/off
+        setSlideshowState(this, !ssRunning);
+
+      });
+
+      $('.pswp-custom-button--photogrid', context).click(function(){
+        if (Drupal.settings.RelaProperty) {
+          var propertyNID = Drupal.settings.RelaProperty.nid;
+          if ($('body').hasClass('ps-grid-open')) {
+            $('body').removeClass('ps-grid-open');
+            $('#pspw-gallery-thumbs').hide();
+            window.dispatchEvent(new Event('resize'));
+          }
+
+          else {
+            $('body').addClass('ps-grid-open');
+            if ($('body').hasClass('ps-grid-processed')) {
+              $('#pspw-gallery-thumbs').show();
+              window.dispatchEvent(new Event('resize'));
+            }
+
+            else {
+              $('body').addClass('ps-grid-processed');
+              if ($('#gallery-thumbs-ph').length > 0) {
+                 $('#gallery-thumbs-ph').show();
+              }
+              relaAjaxLink('/relajax/nojs/property/' + propertyNID + '/gallery-thumbs');
+
+              if (typeof settings.multiGallerylazyloader !== 'undefined') {
+                var waitForEl = function(selector, callback) {
+                if (jQuery(selector).length) {
+                  callback();
+                }
+                else {
+                  setTimeout(function() {
+                    waitForEl(selector, callback);
+                  }, 100);
+                }};
+
+                waitForEl('#pspw-gallery-thumbs', function() {
+                  $('#pspw-gallery-thumbs .thumb img', context).each(function(){
+                    var pswp_pid = $(this).parent().data('pid');
+                    var img_replace = $(".multi-gallery-image[data-pid='" + pswp_pid + "'] .inner").data('src');
+                    $(this).attr('src', img_replace);
+                  });
+                });
+              }
+
+              window.dispatchEvent(new Event('resize'));
+            }
+          }
+        }
+      });
+
+      $('#pspw-close-thumbs', context).click(function(){
+         $('body').removeClass('ps-grid-open');
+         $('#pspw-gallery-thumbs').hide();
+         window.dispatchEvent(new Event('resize'));
+      });
+
+
+      $('#pspw-gallery-thumbs .thumb').unbind('click');
+      $('#pspw-gallery-thumbs .thumb').click(function(){
+        var thumbIndex = $(this).data('pid');
+        var currentGal = settings.RelaProperty.currentPSgallery
+        currentGal.goTo(parseInt(thumbIndex));
+      });
+
+      function setSlideshowState(el, running) {
+        if (running) {
+          $(ssButtonClass + ' i').removeClass('fa-play');
+          $(ssButtonClass + ' i').addClass('fa-pause');
+          setTimeout(gotoNextSlide, ssDelay / 2.0 /* first time wait less */ );
+        }
+        else {
+          $(ssButtonClass + ' i').addClass('fa-play');
+          $(ssButtonClass + ' i').removeClass('fa-pause');
+        }
+        var title = running ? "Pause Slideshow" : "Play Slideshow";
+        // $(el).removeClass(running ? "play" : "pause") // change icons defined in css
+        //   .addClass(running ? "pause" : "play")
+        //   .prop('title', title);
+        ssRunning = running;
+      }
+
+      function gotoNextSlide() {
+        if (ssRunning && !!gallery) {
+          ssOnce = true;
+          var n = '.pswp__scroll-wrap';
+          $(n).addClass("animated fadeOut");
+          setTimeout(function() {
+            $(n).addClass("invisible").removeClass("animated fadeOut");
+            gallery.next();
+            $(n).removeClass("invisible").addClass("animated fadeIn");
+            setTimeout(function() {
+              $(n).removeClass("animated fadeIn");
+            }, 700)
+            }, 700)
+          //gallery.next();
+          // start counter for next slide in 'afterChange' listener
+        }
+      }
+
+    },
+    /**
+     * Triggers when user clicks on thumbnail.
+     *
+     * Code taken from http://photoswipe.com/documentation/getting-started.html
+     * and adjusted accordingly.
+     */
+    onThumbnailsClick: function(e) {
+      e = e || window.event;
+
+      e.preventDefault ? e.preventDefault() : e.returnValue = false;
+
+      var $clickedGallery = $(this);
+
+      var eTarget = e.target || e.srcElement;
+      var $eTarget = $(eTarget);
+
+      // find root element of slide
+      var clickedListItem = $eTarget.closest('.photoswipe');
+
+      if (!clickedListItem) {
+
+        return;
+      }
+
+      // get the index of the clicked element
+      index = clickedListItem.index('.photoswipe');
+
+      if (index >= 0) {
+        // open PhotoSwipe if valid index found
+        Drupal.behaviors.photoswipe.openPhotoSwipe(index, $clickedGallery);
+      }
+      return false;
+    },
+    /**
+     * Code taken from http://photoswipe.com/documentation/getting-started.html
+     * and adjusted accordingly.
+     */
+    openPhotoSwipe: function(index, galleryElement, options) {
+      var pswpElement = $('.pswp')[0];
+      var images = [];
+      options = options || Drupal.behaviors.photoswipe.photoSwipeOptions;
+
+      var images = galleryElement.find('a.photoswipe');
+      images.each(function(index) {
+        var $image = $(this);
+        size = $image.data('size') ? $image.data('size').split('x') : ['', ''];
+        images.push({
+          src: $image.attr('href'),
+          w: size[0],
+          h: size[1],
+          title: $image.data('overlay-title')
+        });
+      })
+
+      // define options
+      options.index = index;
+      // define gallery index (for URL)
+      options.galleryUID = galleryElement.data('pswp-uid');
+
+      // Pass data to PhotoSwipe and initialize it
+      var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, images, options);
+      gallery.init();
+      this.galleries.push(gallery);
+      $(pswpElement).data('pswp', gallery);
+    },
+    /**
+     * Parse picture index and gallery index from URL (#&pid=1&gid=2)
+     *
+     * Code taken from http://photoswipe.com/documentation/getting-started.html
+     * and adjusted accordingly.
+     */
+    parseHash: function() {
+      var hash = window.location.hash.substring(1),
+        params = {};
+
+      if (hash.length < 5) {
+        return params;
+      }
+
+      var vars = hash.split('&');
+      for (var i = 0; i < vars.length; i++) {
+        if (!vars[i]) {
+          continue;
+        }
+        var pair = vars[i].split('=');
+        if (pair.length < 2) {
+          continue;
+        }
+        params[pair[0]] = pair[1];
+      }
+
+      if (params.gid) {
+        params.gid = parseInt(params.gid, 10);
+      }
+
+      if (!params.hasOwnProperty('pid')) {
+        return params;
+      }
+      params.pid = parseInt(params.pid, 10);
+
+      return params;
+    }
+  };
+})(jQuery, Drupal, PhotoSwipe, PhotoSwipeUI_Default);
+;/*})'"*/;/*})'"*/
