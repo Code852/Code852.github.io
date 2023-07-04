@@ -824,8 +824,11 @@
             </div>
           </div>
         </div>
-        <div class="main-menu" hidden>
-          <button class="close-menu-button outside-menu-toggle">
+        <div class="main-menu">
+          <button
+            id="changewidthclsose"
+            class="close-menu-button outside-menu-toggle"
+          >
             <span class="close-ex"></span>Close
           </button>
           <div class="item-list">
@@ -836,31 +839,35 @@
               <li
                 class="sticky-link sticky-link-overview sticky-link-overview first"
               >
-                <a class="section-overview">Overview</a>
+                <a href="#overview" class="section-overview">Overview</a>
               </li>
               <li
                 class="sticky-link sticky-link-amenities sticky-link-amenities"
               >
-                <a class="section-amenities">Features</a>
+                <a href="#amenities" class="section-amenities">Features</a>
               </li>
               <li class="sticky-link sticky-link-photos sticky-link-photos">
-                <a class="section-photos" data="ps-open">Photos</a>
+                <a href="#photos" class="section-photos" data="ps-open"
+                  >Photos</a
+                >
               </li>
               <li class="sticky-link sticky-link-videos sticky-link-videos">
-                <a class="section-videos">Video</a>
+                <a href="#showcase" class="section-videos">Video</a>
               </li>
               <li class="sticky-link sticky-link-vtour sticky-link-vtour">
-                <a class="section-vtour">3D Tour</a>
+                <a href="#showcase" class="section-vtour">3D Tour</a>
               </li>
               <li
                 class="sticky-link sticky-link-hotspot-floorplans sticky-link-hotspot-floorplans"
               >
-                <a class="section-hotspot-floorplans">Floor Plans</a>
+                <a href="#showcase" class="section-hotspot-floorplans"
+                  >Floor Plans</a
+                >
               </li>
               <li
                 class="sticky-link njmls-hide sticky-link njmls-hide-map sticky-link njmls-hide-map last"
               >
-                <a class="section-map">Map</a>
+                <a href="#map" class="section-map">Map</a>
               </li>
             </ul>
           </div>
@@ -874,6 +881,7 @@
             </div>
           </h1>
           <button
+            id="changeWidthButton"
             class="main-menu-toggle outside-menu-toggle multi-gallery-close affix-top"
           >
             <div class="lines">
@@ -2642,5 +2650,17 @@
         </div>
       </section>
     </div>
+    <script>
+      const changeWidthButton = document.getElementById("changeWidthButton");
+      const mainMenu = document.querySelector(".outside-menu-open .main-menu");
+      const changewidthclsose = document.getElementById("changewidthclsose");
+
+      changeWidthButton.addEventListener("click", () => {
+        mainMenu.style.left = "0";
+      });
+      changewidthclsose.addEventListener("click", () => {
+        mainMenu.style.removeProperty("left");
+      });
+    </script>
   </body>
 </html>
